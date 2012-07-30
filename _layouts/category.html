@@ -1,0 +1,10 @@
+---
+layout: page
+---
+
+<div id="main-content">
+{% assign posts = site.categories[page.category] %}
+{% assign no_category = true %}
+{% include post-listing.html %}
+</div>
+

@@ -1,0 +1,9 @@
+---
+layout: page
+---
+
+<div id="main-content">
+{% assign posts = site.tags[page.tag] %}
+{% include post-listing.html %}
+</div>
+
