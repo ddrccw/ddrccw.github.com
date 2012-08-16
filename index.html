@@ -3,8 +3,9 @@ layout: default
 no_sidebar: true
 ---
 
-<h1 class="h1-5">Bilal Syed Hussain</h1>
+<h1 class="h1-5">ddrccw's library</h1>
 
+<!--
 <p class="large-para">This site contains the various programs and scripts I have created, along with a blog.</p>
 
 <div class="prepend-2 append-2 home span-{% if page.no_sidebar %}8{% else %}5{% endif %}">
@@ -41,11 +42,12 @@ There also a <a href="/blog">blog</a> with an <a href='/feed'>RSS</a> feed that 
 	{% endfor %}
 	
 </div>
+-->
 
 <div class="span-24">
-	<h2 class>Latest Posts</h2>
+	<h2 class>最近的文章</h2>
 
 	{% assign posts = site.posts %}
-	{% assign listing_limit = 4 %}
+	{% assign listing_limit = 4 %} <!--single page only has 4 articles-->
 	{% include post-listing-index.html %}
 </div>	

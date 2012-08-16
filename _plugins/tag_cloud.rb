@@ -19,16 +19,21 @@ module Jekyll
             :posts => tag[1]
           } 
         end
-
+                
         tags.sort! { |a, b| a[:title] <=> b[:title] }
         min_count = tags.min { |a, b| a[:posts].length <=> b[:posts].length }[:posts].length
         max_count = tags.max { |a, b| a[:posts].length <=> b[:posts].length }[:posts].length
-
+        
+        #tag font-size weight [75,280]
         weights = tags.inject({}) do |result, tag|
-          result[tag[:title]] = (tag[:posts].length - min_count) * (@@max_size - @@min_size) / (max_count - min_count) + @@min_size
+          if  min_count != max_count then
+            result[tag[:title]] = (tag[:posts].length - min_count) * (@@max_size - @@min_size) / (max_count - min_count) + @@min_size
+          else
+            result[tag[:title]] = 100
+          end
           result
         end
-
+        
         tags.inject("") do |html, tag|
           length = tag[:posts].length
 
