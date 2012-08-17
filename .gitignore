@@ -3,5 +3,6 @@
 *.xcuserstate
 *.xcbkptlist
 _site/*
+_compiled
 _compiled/*
 _cache/*
