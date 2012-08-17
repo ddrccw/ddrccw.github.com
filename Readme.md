@@ -33,7 +33,9 @@
 ###Rakefile###
 ：
 1. `rake build`      用jekyll合成站点页面
+
 2. `rake ssend`      pushes the compiled version to github.
+
 3. `rake send`       pushes the compiled version to github, after deleted the cache.
 
 
