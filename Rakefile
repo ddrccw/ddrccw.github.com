@@ -39,7 +39,6 @@ end
 # Send the changes to the server and open the webpage
 task :ssend => :commit do
 	puts %x[cd _compiled; git push origin master]
-	%x[osascript -e 'open location "http://bilalh.github.com"']
 end
 
 
