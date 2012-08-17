@@ -2,7 +2,6 @@
 *.swp
 *.xcuserstate
 *.xcbkptlist
-<<<<<<< HEAD
-_site
-=======
->>>>>>> 5d38534695364961992a95c74563e7f9087862ee
+_site/*
+_compiled/*
+_cache/*
