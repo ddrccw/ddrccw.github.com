@@ -31,7 +31,7 @@
 基本想法：git clone两次，在source分支中编辑blog的相关的内容，在_compile里checkout至master，将由source分支中jekll合成的html同步到_compile，最后git commit到github服务端的master下。
 
 ###Rakefile###
-：
+
 1. `rake build`      用jekyll合成站点页面
 
 2. `rake ssend`      pushes the compiled version to github.
