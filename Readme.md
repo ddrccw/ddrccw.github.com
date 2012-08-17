@@ -39,6 +39,13 @@
 3. `rake send`       pushes the compiled version to github, after deleted the cache.
 
 
+***ps:***
+
+1. source分支的更新，直接在source分支下`git push origin HEAD`
+
+2. master的更新，在source分支下rake ssend
+    
+
 ###Licence###
 
 [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
