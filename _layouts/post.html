@@ -34,8 +34,15 @@ h3,h4 {
 	<div class="content">
 		{{ content }}
 	</div>
-
+	
 	<div class="next-prev-nav low-top">
+		{% if page.isOriginal == true %}
+		-----------------------------------
+		<b>本文内容遵从<a title="Content licenced under Creative Commons by-nc-sa 3.0" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh">CC版权协议</a>转载请注明出自<a href="http://ddrccw.github.com">ddrccw</a></b>
+		-----------------------------------
+		<hr/>
+		{% endif %}
+		
 		{% if page.next.url %}
 			&laquo;&nbsp;<a href="{{ page.next.url }}" rel="next" title="{{ page.next.title }}">{{ page.next.title }}</a>
 		{% endif %}

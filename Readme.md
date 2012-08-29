@@ -38,6 +38,7 @@
 
 3. `rake send`       pushes the compiled version to github, after deleted the cache.
 
+4. `rake kill`       本地jekyll调试后，kill jekyll
 
 ***ps:***
 

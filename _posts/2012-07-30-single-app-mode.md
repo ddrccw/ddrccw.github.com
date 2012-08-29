@@ -2,6 +2,7 @@
 layout: post
 title: single app mode
 date: 2012-07-30 14:18:00
+isOriginal: true
 category: iOS开发
 tags:
  - iOS
@@ -17,7 +18,7 @@ tags:
 
 那么iOS 6之前的版本按理说应该没有提供这种模式，然而去apple体验店看看其ipad上展示产品信息的app，你会纳闷得发现它确实很像前面提到的single app mode，难道其中有什么玄机，带着这个疑问，我开始在网上搜寻答案。
 
-经过一番搜索，在万能的stackover上，确实有达人给出了一些线索。
+经过一番搜索，在万能的stackoverflow上，确实有达人给出了一些线索。
 
 ##1. disable home button##
 首先，这里需要了解《应用程序分发和部署问题》中提到的 iphone 配置实用工具（IPCU）以及配置描述文件的概念。

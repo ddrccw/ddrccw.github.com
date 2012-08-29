@@ -1,5 +1,10 @@
 task :default => :local
 
+# jekyll local test, kill jekyll
+task :kill do
+	`ps aux | grep "[j]ekyll" | tr -s ' ' | cut -d " " -f 2 | xargs kill -9`
+end
+
 task :build do
 	system("jekyll")
 end
