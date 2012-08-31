@@ -38,7 +38,9 @@
 
 3. `rake send`       pushes the compiled version to github, after deleted the cache.
 
-4. `rake kill`       本地jekyll调试后，kill jekyll
+4. `rake kill`       本地jekyll调试后，kill掉状态为T的jekyll和rake进程。
+
+5. `rake localtest`  本地jekyll调试用。
 
 ***ps:***
 

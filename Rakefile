@@ -1,8 +1,12 @@
 task :default => :local
 
-# jekyll local test, kill jekyll
+# jekyll local test, kill jekyll and rake (state=T)
 task :kill do
-	`ps aux | grep "[j]ekyll" | tr -s ' ' | cut -d " " -f 2 | xargs kill -9`
+	`ps aux | grep -E "[j]ekyll|[r]ake" | tr -s ' ' | cut -d " " -f 2,8 | awk '{if($2=="T") system("kill -9 "$1)}'`
+end
+
+task :localtest => :kill do
+	system("jekyll --server")
 end
 
 task :build do
