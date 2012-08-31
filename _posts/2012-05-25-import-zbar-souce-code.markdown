@@ -26,9 +26,12 @@ tags:
 
 下载[源码包](http://sourceforge.net/projects/zbar/files/zbar/0.10/zbar-0.10.tar.bz2/download),将相关的代码文件导入到Xcode项目中。
 
-* zbar 相关的c api           ./zbar
-* zbar 相关的c/c++ header    ./include
-* zbar iphone的obj-c code and related header  ./iphone
+* zbar 相关的c api           
+	./zbar
+* zbar 相关的c/c++ header    
+	./include
+* zbar iphone的obj-c code and related header  
+	./iphone
 
 ### 2 在Xcode项目中的步骤 ###
 

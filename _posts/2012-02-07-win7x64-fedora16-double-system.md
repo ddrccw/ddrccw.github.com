@@ -7,6 +7,8 @@ category: 日常
 tags:
  - linux
  - fedora
+ - win7
+ - 双系统
 ---
 
 
