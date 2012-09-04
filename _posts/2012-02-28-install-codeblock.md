@@ -8,6 +8,8 @@ tags:
  - c/c++
  - codeblock
  - IDE
+keywords: c/c++ codeblock IDE
+description: 开发利器codeblocks安装
 ---
 
 

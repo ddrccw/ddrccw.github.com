@@ -7,6 +7,8 @@ category: iOS开发
 tags:
  - iOS
  - ZBar
+keywords: iOS ZBar
+description: 利用源码的方式导入ZBar作为第三方library
 ---
 
 

@@ -9,6 +9,8 @@ tags:
  - fedora
  - win7
  - 双系统
+keywords: linux fedora win7 双系统
+description: win7x64+fedora16双系统安装
 ---
 
 

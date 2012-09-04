@@ -7,6 +7,8 @@ category: 日常
 tags:
  - VMware
  - Lion
+keywords: VMware Lion
+description: Vmware 8安装Lion
 ---
 
 
