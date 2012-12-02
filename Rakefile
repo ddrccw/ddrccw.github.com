@@ -56,6 +56,15 @@ task :remove_cache do
 	`rm _cache/*`
 end
 
+#http://hints.macworld.com/article.php?story=20040617170055379
+task :testAppleScript do
+	%x[
+		osascript << EOF
+		say "hello world"
+		EOF
+	]
+end
+
 # Makes a new post
 task :new do
 	throw "No title given" unless ARGV[1]
@@ -63,8 +72,9 @@ task :new do
 	ARGV[1..ARGV.length - 1].each { |v| title += " #{v}" }
 	title.strip!
 	now = Time.now
-	path = "_posts/#{now.strftime('%F')}-#{title.downcase.gsub(/[\s\.]/, '-').gsub(/[^\w\d\-]/, '')}.md"
-	
+	blogRoot = Dir.pwd # File.dirname(__FILE__) also OK
+	path = "#{blogRoot}/_posts/#{now.strftime('%F')}-#{title.downcase.gsub(/[\s\.]/, '-').gsub(/[^\w\d\-]/, '')}.md"
+
 	File.open(path, "w") do |f|
 		f.puts "---"
 		f.puts "layout: post"
@@ -80,8 +90,19 @@ task :new do
 		f.puts ""
 		f.puts ""
 	end
-	
-	`mate #{path}`
+
+	%x[
+		osascript << EOF
+			tell application "Mou"
+				activate
+				--without as string the result is a file reference 
+				set filePath to POSIX file "#{path}" as string
+				--display dialog filePath
+				open filePath
+			end tell
+		EOF
+	]
+	#`mate #{path}`
 	exit
 end
 
