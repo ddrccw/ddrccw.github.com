@@ -6,11 +6,12 @@ task :kill do
 end
 
 task :localtest => :kill do
-	system("jekyll --server")
+	system("jekyll --server")   #not inclue blog.html
 end
 
 task :build do
 	system("jekyll")
+	`mv _site/blog.html _site/blog/index.html`  #for the sake of the limitation of jekyll-pagenation
 end
 
 # Refreshes the web page in Firefox

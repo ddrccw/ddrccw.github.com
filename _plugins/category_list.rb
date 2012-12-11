@@ -10,7 +10,7 @@ module Jekyll
       categories.keys.each do |category|
         result << %(<a href="/categories/#{category.slugize}"><strong>#{category}</strong></a> (#{categories[category].length})<br />)
       end
-      
+
       result
     end
   end

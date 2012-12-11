@@ -13,7 +13,7 @@ pygments: true
 github_user:  ddrccw
 disqus_short_name: ddrccw
 
-#plugin paginate at blog.html
+#plugin jekyll-pagination at blog.html
 paginate: 5
 paginate_files: 
   - blog.html
@@ -26,3 +26,5 @@ url:       http://ddrccw.github.com
 
 #category_title_prefix
 #category_meta_description_prefix
+
+recent_post_listing_limit: 10        #single page only has 10 articles
