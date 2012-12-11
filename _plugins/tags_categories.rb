@@ -39,14 +39,14 @@ module Jekyll
     # generate_tags_categories is called by the custom process function in site_process.rb
         
     def generate_tags_categories
-      throw "No 'category' layout found." unless self.layouts.key? 'category'
+      throw "No 'category' layout found." unless self.layouts.key? 'category' #parameter
       throw "No 'tag' layout found." unless self.layouts.key? 'tag'
       
       # Categories
-      dir = self.config['category_dir'] || 'categories'
+      dir = self.config['category_dir'] || 'categories'    #categories in layouts as relative dir path
       write_page Categories.new(self, self.source, dir) if self.layouts.key? 'categories'
       
-      self.categories.keys.each do |category|
+      self.categories.keys.each do |category|        
         write_page Category.new(self, self.source, File.join(dir, category.slugize), category)
       end
       

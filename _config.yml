@@ -13,9 +13,16 @@ pygments: true
 github_user:  ddrccw
 disqus_short_name: ddrccw
 
+#plugin paginate at blog.html
 paginate: 5
+paginate_files: 
+  - blog.html
+
 
 permalink: /:year/:month/:day/:title
 exclude:   ["Rakefile", "CNAME", "ddrccw.tmproj"]
 title:     ddrccw's library
 url:       http://ddrccw.github.com
+
+#category_title_prefix
+#category_meta_description_prefix
