@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby19
+# encoding: utf-8
 # from https://github.com/BlackBulletIV/blackbulletiv.github.com/blob/master/_plugins/archives.rb
 
 require_relative 'custom_page'

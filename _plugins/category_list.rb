@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby19
+# encoding: utf-8
+
 module Jekyll
   class CategoryList < Liquid::Tag
     safe = true

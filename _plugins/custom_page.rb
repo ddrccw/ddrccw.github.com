@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby19
+# encoding: utf-8
+
 module Jekyll
 	class CustomPage < Page
 		def initialize(site, base, dir, layout,name='index.html')

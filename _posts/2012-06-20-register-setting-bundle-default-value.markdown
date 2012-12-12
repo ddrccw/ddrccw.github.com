@@ -3,7 +3,7 @@ layout: post
 title: 获取Settings bundle中预定义的默认值
 date: 2012-06-20 15:18:00
 isOriginal: true
-category: iOS开发
+category: iOS-dev
 tags:
  - iOS
  - Settings.bundle

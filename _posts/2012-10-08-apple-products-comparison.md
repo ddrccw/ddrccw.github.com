@@ -3,7 +3,7 @@ layout: post
 title: apple products comparison
 date: 2012-10-8 18:18:00
 isOriginal: true
-category: 日常
+category: Usage
 tags:
  - iPad
  - iPhone

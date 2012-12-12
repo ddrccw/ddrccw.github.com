@@ -82,8 +82,8 @@ task :new do
 		f.puts "title: #{title}"
 		f.puts "date: #{now.strftime('%F %T')}"
 		f.puts "isOriginal: true"
-		f.puts "category: "
-		f.puts "tags:"
+		f.puts "category: " #cannot contain '/', non-ASCII chars should be avoided
+		f.puts "tags:"      #cannot contain '/', ',' is not recommended, non-ASCII chars should be avoided
 		f.puts " - "
 		f.puts "keywords: "
 		f.puts "description: "

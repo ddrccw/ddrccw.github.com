@@ -3,12 +3,12 @@ layout: post
 title: win7x64+fedora16双系统安装
 date: 2012-02-07 20:18:00
 isOriginal: true
-category: 日常
+category: Usage
 tags:
  - linux
  - fedora
  - win7
- - 双系统
+ - dual-system
 keywords: linux fedora win7 双系统
 description: win7x64+fedora16双系统安装
 ---

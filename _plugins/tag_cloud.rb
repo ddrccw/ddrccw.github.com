@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby19
+# encoding: utf-8
+
 module Jekyll
   class TagCloud < Liquid::Tag
     @@max_size = 280
@@ -19,7 +21,7 @@ module Jekyll
             :posts => tag[1]
           } 
         end
-                
+        
         tags.sort! { |a, b| a[:title] <=> b[:title] }
         min_count = tags.min { |a, b| a[:posts].length <=> b[:posts].length }[:posts].length
         max_count = tags.max { |a, b| a[:posts].length <=> b[:posts].length }[:posts].length

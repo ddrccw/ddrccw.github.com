@@ -3,7 +3,7 @@ layout: post
 title: single app mode
 date: 2012-07-30 14:18:00
 isOriginal: true
-category: iOS开发
+category: iOS-dev
 tags:
  - iOS
  - IPCU

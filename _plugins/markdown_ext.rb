@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby19
+# encoding: utf-8
+
 module Jekyll
   class MarkdownConverter
     alias :old_convert :convert

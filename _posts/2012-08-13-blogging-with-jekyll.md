@@ -3,7 +3,7 @@ layout: post
 title: 在github上用jekyll搭建个人blog
 date: 2012-08-13 21:37:13
 isOriginal: true
-category: 日常
+category: Usage
 tags:
  - github
  - github-pages

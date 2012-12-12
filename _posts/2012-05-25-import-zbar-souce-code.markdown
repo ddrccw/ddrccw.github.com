@@ -3,7 +3,7 @@ layout: post
 title: 利用源码的方式导入ZBar作为第三方library
 date: 2012-05-25 18:18:00
 isOriginal: true
-category: iOS开发
+category: iOS-dev
 tags:
  - iOS
  - ZBar

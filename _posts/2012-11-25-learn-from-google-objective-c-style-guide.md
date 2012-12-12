@@ -3,7 +3,7 @@ layout: post
 title: Google Objective-C Style Guide学习笔记
 date: 2012-11-25 19:10:53
 isOriginal: true
-category: iOS开发
+category: iOS-dev
 tags:
  - Objective-c
  - iOS

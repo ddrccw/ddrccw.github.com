@@ -3,7 +3,7 @@ layout: post
 title: Vmware 8安装Lion
 date: 2012-02-22 14:18:00
 isOriginal: true
-category: 日常
+category: Usage
 tags:
  - VMware
  - Lion

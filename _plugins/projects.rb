@@ -176,6 +176,7 @@ module Jekyll
 			
 			self.config['projects'].each do |k, v|
 				slug = v['slug'] || k.slugize
+
 				p = Project.new(self, self.source, File.join(dir, slug), k, v,"/#{dir}/#{slug}")
 				p.data['url'] = "/#{dir}/#{slug}"
 				projects << p

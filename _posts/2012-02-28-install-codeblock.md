@@ -3,9 +3,10 @@ layout: post
 title: 开发利器codeblocks安装
 date: 2012-02-22 21:18:00
 isOriginal: true
-category: c/c++
+category: c,c++
 tags:
- - c/c++
+ - c
+ - c++
  - codeblock
  - IDE
 keywords: c/c++ codeblock IDE

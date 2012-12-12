@@ -3,7 +3,7 @@ layout: post
 title: 升级app到ios6
 date: 2012-12-02 22:45:29
 isOriginal: true
-category: iOS开发
+category: iOS-dev
 tags:
  - ios6
  - upgrade
