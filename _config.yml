@@ -28,3 +28,27 @@ url:       http://ddrccw.github.com
 #category_meta_description_prefix
 
 recent_post_listing_limit: 10        #single page only has 10 articles
+
+
+#-----demo--------
+#projects:
+#    name: &name
+#        title:     title
+#        category:  study or feature
+#        languages: e.g. [Objective C, C++, Ruby] 
+#        icon:      project_icon.png                          //optional
+#        version:   version_number                            //optional
+#        download:  download_url                              //optional
+#        docs:      wiki or docs_url                          //optional 
+#        changelog: true or false if existing changelog.html  //optional
+#        apidocs:   true or false if existing apidocs         //optional
+#        support:   support_url                               //optional
+
+projects:
+
+    CCChainedMenu: &CCChainedMenu
+        title:        CCChainedMenu
+        category:     study
+        languages:    [Objective C]
+        description:  >
+            just to learn CAAnimation

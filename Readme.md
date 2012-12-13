@@ -15,7 +15,7 @@
 2. `cd ddrccw`
 3. `mkdir _cache`
 
-	_cache       //????
+	_cache       //如果你有自己的开源项目，参考_config.yml里的写法，会自动将项目的README.md download放置其中，最终build出一个适合本站主题的README页面
 
 4. `git clone https://github.com/ddrccw/ddrccw.github.com.git _compiled`
 
@@ -42,9 +42,11 @@
 
 5. `rake localtest`  本地jekyll调试用。
 
+6. `rake new article-title`  自动生成一个模板编辑页面，并用Mou打开
+
 ***ps:***
 
-1. source分支的更新，直接在source分支下`git push origin HEAD`
+1. source分支的更新，直接在source分支下`git push origin HEAD`或`rake update`
 
 2. master的更新，在source分支下rake ssend
     

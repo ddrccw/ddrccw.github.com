@@ -1,10 +1,11 @@
 task :default => :local
 
-# jekyll local test, kill jekyll and rake (state=T)
+desc:"jekyll local test, kill jekyll and rake (state=T)"
 task :kill do
 	`ps aux | grep -E "[j]ekyll|[r]ake" | tr -s ' ' | cut -d " " -f 2,8 | awk '{if($2=="T") system("kill -9 "$1)}'`
 end
 
+desc:"local server test"
 task :localtest => :kill do
 	system("jekyll --server")   #not inclue blog.html
 end
@@ -14,7 +15,7 @@ task :build do
 	`mv _site/blog.html _site/blog/index.html`  #for the sake of the limitation of jekyll-pagenation
 end
 
-# Refreshes the web page in Firefox
+desc:"Refreshes the web page in Firefox"
 task :local => :build do
 	puts %x[rsync -q -acvrz	 --delete _site/]
 	# %x[osascript -e 'open location "http://localhost/"']
@@ -35,7 +36,7 @@ task :local => :build do
 	]
 end
 
-# Commit the changes to the site.
+desc:"Commit the changes to the site."
 task :commit => :build do
 	puts %x[rsync -q -acvrz --exclude .git --delete _site/ _compiled/]
 	puts %x[./compress.rb]
@@ -46,18 +47,25 @@ task :send => [:remove_cache, :ssend] do
 	
 end
 
-# Send the changes to the server and open the webpage
+desc:"Send the changes to the server and open the webpage"
 task :ssend => :commit do
 	puts %x[cd _compiled; git push origin master]
 end
 
-
+desc:"update source files"
+task :update do
+  if `git st | wc -l` == 2
+    puts %x[git push origin HEAD]
+  else
+    puts "UPDATE FAILED:exists sth to commit!!!"
+  end
+end
 
 task :remove_cache do
 	`rm _cache/*`
 end
 
-#http://hints.macworld.com/article.php?story=20040617170055379
+desc:"http://hints.macworld.com/article.php?story=20040617170055379"
 task :testAppleScript do
 	%x[
 		osascript << EOF
@@ -66,7 +74,7 @@ task :testAppleScript do
 	]
 end
 
-# Makes a new post
+desc:"Makes a new post"
 task :new do
 	throw "No title given" unless ARGV[1]
 	title = ""

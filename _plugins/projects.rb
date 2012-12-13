@@ -18,13 +18,18 @@ module Jekyll
 	class Project < CustomPage
 		def initialize(site, base, dir, name, info, url)
 			super site, base, dir, 'project'
-			puts "Building project: #{name}"
+			#puts "Building project: #{name}"
 			
 			self.data['name']      = name
 			self.data['title']     = info['title'] || name
 			self.data['nice_name'] = info['title']
+      throw "No 'category' found in project config" unless info['category']
+			self.data['category'] = info['category']
+      if info['languages'] then
+				self.data['languages'] = info['languages'].join(" &nbsp;&nbsp;")
+			end
 			
-			
+			#NOTICE:others are optional
 			self.data['version']   = info['version_title'] || info['version']
 			self.data['repo']      = "https://github.com/#{site.config['github_user']}/#{name}"
 			self.data['download']  = info['download'] || "#{self.data['repo']}/zipball/#{info['version'] || 'master'}"
@@ -46,28 +51,28 @@ module Jekyll
 				self.data['features']     = info['features']
 				self.data['readme_url']   = 'readme.html'
 				self.data['features_url'] = url
-			elsif self.data['changelog_url'] #TODO else?
+			elsif self.data['changelog_url']  #TODO else?
 				self.data['readme_url']   = url
 			end
 			
-			readme =
-			if info['readme'] then
-				IO.read info['readme']
-			else
-				check_cache(name,"Readme.md")
-			end
-			self.data['readme'] = Maruku.new(readme).to_html
-			self.data['readme_name'] = info['readme_name'] if info['readme_name']
-			
-			doc = Nokogiri::HTML(self.data['readme'])
+      if self.data['category'] != 'study'
+			  readme =
+  			if info['readme'] then
+  				IO.read info['readme']
+  			else
+  				check_cache(name,"README.md")  #name as README.md(Case sensitive) in your projects
+  			end
+  			self.data['readme'] = Maruku.new(readme).to_html
+  			doc = Nokogiri::HTML(self.data['readme'])
+		  else
+		    self.data['url'] = self.data['repo']
+	    end
+		  
 			self.data['description'] = info['description'] || doc.css('#description').text || ""
+			self.data['readme_name'] = info['readme_name'] if info['readme_name']
 			
 			self.data['changelog_location'] =     info['changelog_location']     || nil
 			self.data['changelog_heading_hash'] = info['changelog_heading_hash'] || false
-			
-			if info['languages'] then
-				self.data['languages'] = info['languages'].join(" &nbsp;&nbsp;")
-			end 
 			
 			["iusethis", "macupdate", "alternativeto"].each do |e|
 				self.data[e] = info[e]  if info[e]
@@ -178,9 +183,13 @@ module Jekyll
 				slug = v['slug'] || k.slugize
 
 				p = Project.new(self, self.source, File.join(dir, slug), k, v,"/#{dir}/#{slug}")
-				p.data['url'] = "/#{dir}/#{slug}"
+				if p.data['url'].empty? then
+				  p.data['url'] = "/#{dir}/#{slug}" 
+  			else
+  			  write_page p	
+  			end
+  			
 				projects << p
-				write_page p
 				write_page ChangeLog.new(self, self.source, File.join(dir, slug),k, p) if v['changelog']
 				write_page Readme.new(self, self.source, File.join(dir, slug),k, p)    if v['features']
 				write_page Gallery.new(self, self.source, File.join(dir, slug),k, p)   if v['gallery']
