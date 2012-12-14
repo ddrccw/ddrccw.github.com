@@ -9,9 +9,9 @@ module Jekyll
 	class Projects < CustomPage
 		def initialize(site, base, dir, projects)
 			super site, base, dir, 'projects'
-			data = []
-			projects.each { |v| data << v.data }
-			self.data['projects'] = data
+      # data = []
+      # projects.each { |v| data << v.data }
+			self.data['projects'] = projects
 		end
 	end
 	
@@ -55,7 +55,7 @@ module Jekyll
 				self.data['readme_url']   = url
 			end
 			
-      if self.data['category'] != 'study'
+      if self.data['category'] == 'feature'
 			  readme =
   			if info['readme'] then
   				IO.read info['readme']
@@ -65,7 +65,7 @@ module Jekyll
   			self.data['readme'] = Maruku.new(readme).to_html
   			doc = Nokogiri::HTML(self.data['readme'])
 		  else
-		    self.data['url'] = self.data['repo']
+		    self.data['link'] = self.data['repo']
 	    end
 		  
 			self.data['description'] = info['description'] || doc.css('#description').text || ""
@@ -85,6 +85,7 @@ module Jekyll
 	class ProjectPage < CustomPage
 		def initialize(site, base, dir, name, project,html_name)
 			@project = project
+			
 			puts "Building project's #{name}"
 			super site, base, dir, name, html_name
 			['version','repo','download', 'icon', 'name'].each do |key|
@@ -176,24 +177,29 @@ module Jekyll
 			return unless self.config.key? 'projects'
 			throw "No 'project' layout found." unless self.layouts.key? 'project'
 			dir = self.config['project_dir'] || 'projects'
-			projects = []
+			projects = Hash.new
 			Dir.mkdir '_cache' unless	 File.directory?('_cache')
 			
 			self.config['projects'].each do |k, v|
 				slug = v['slug'] || k.slugize
 
 				p = Project.new(self, self.source, File.join(dir, slug), k, v,"/#{dir}/#{slug}")
-				if p.data['url'].empty? then
-				  p.data['url'] = "/#{dir}/#{slug}" 
-  			else
-  			  write_page p	
-  			end
-  			
-				projects << p
+				if p.data['link'].empty? then
+          p.data['link'] = "/#{dir}/#{slug}" 
+          write_page p
+				end
+				
+				if !projects.has_key?(p.data['category']) then
+				  projects[p.data['category']] = [p]
+				else
+				  projects[p.data['category']] << p
+				end
+
+        # puts projects['study']
 				write_page ChangeLog.new(self, self.source, File.join(dir, slug),k, p) if v['changelog']
 				write_page Readme.new(self, self.source, File.join(dir, slug),k, p)    if v['features']
 				write_page Gallery.new(self, self.source, File.join(dir, slug),k, p)   if v['gallery']
-				
+
 			end
 			
 			write_page Projects.new(self, self.source, dir, projects) if self.layouts.key? 'projects'

@@ -17,6 +17,16 @@ h1{margin-top:0.8em}
 h2{margin-top:0.75em}
 h3{margin-top:0.7em}
 h4,h5{margin-top:0.6em}
+
+/*projects page or project page*/
+#main h2.title-feature{
+	color: #335E8D;
+	margin-left: 3px;
+	font-variant: small-caps;
+	font-weight: normal;
+	border-bottom: 1px dotted #CCC;
+}
+
 p{margin:1em 0}
 a,a
 code{color:#2562B0;text-decoration:none;-webkit-transition:all 0.2s linear;transition:all 0.2s linear}
@@ -161,7 +171,8 @@ h2#comment_heading:hover{color:#0698CF}
 #macupdate{float:right;position:relative;top:-45px;left:-100px;margin-bottom:-43px}
 #a2itemwidget{float:right;position:relative;top:-45px;left:-10px;margin-bottom:-43px}
 ox-shadow:0px 0px 2px rgba(0,0,0,0.5);text-shadow:1px 1px 0 white;}
-// googleplus
+
+/*googleplus*/
 .googleplus{h1{-moz-box-shadow:none !important;-webkit-box-shadow:none !important;-o-box-shadow:none !important;box-shadow:none !important;border-bottom:0px none !important;}
 a{text-decoration:none;white-space:normal !important;line-height:32px;img{float:left;margin-right:0.5em;border:0 none;}
 }
@@ -170,7 +181,8 @@ a{text-decoration:none;white-space:normal !important;line-height:32px;img{float:
 .sharing{p.meta + &{padding:{top:1em;left:0;}
 // background:$img-border top left repeat-x;}
 }
-// comments
+
+/*comments*/
 h2#comment_heading:hover{color:#0698CF;}
 .sharing{height:50px;}
 .gsearcher{height:25px;}
@@ -178,7 +190,7 @@ h2#comment_heading:hover{color:#0698CF;}
 #macupdate{float:right;position:relative;top:-45px;left:-100px;margin-bottom:-43px;}
 #a2itemwidget{float:right;position:relative;top:-45px;left:-10px;margin-bottom:-43px;}
 
-//table li for marking diff
+/*table li for marking diff*/
 table tbody tr td.yellow{background-color:yellow;}
 table tbody tr td em.yellow{color:yellow;}
 table tbody tr td em.blue{color:blue;}

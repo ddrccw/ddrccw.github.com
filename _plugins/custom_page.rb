@@ -8,7 +8,7 @@ module Jekyll
 			@base = base
 			@dir	= dir
 			@name = name
-			
+
 			self.process(@name)
 			self.read_yaml(File.join(base, '_layouts'), layout + '.html')
 		end
@@ -40,7 +40,7 @@ module Jekyll
 	class Site
 		def write_page(page)
 			page.render(self.layouts, site_payload)
-			page.write(self.dest)
+			page.write(self.dest)  
 			self.pages << page
 		end
 	end

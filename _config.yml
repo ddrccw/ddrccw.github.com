@@ -32,7 +32,7 @@ recent_post_listing_limit: 10        #single page only has 10 articles
 
 #-----demo--------
 #projects:
-#    name: &name
+#    name: &name    //should be unique
 #        title:     title
 #        category:  study or feature
 #        languages: e.g. [Objective C, C++, Ruby] 
@@ -51,4 +51,4 @@ projects:
         category:     study
         languages:    [Objective C]
         description:  >
-            just to learn CAAnimation
+            尝试运用CAAnimation, 效果类似UCWeb iPad端右下角的小菜单。
