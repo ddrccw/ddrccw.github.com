@@ -43,12 +43,12 @@ task :commit => :build do
 	puts %x[cd _compiled; git add .; git commit -am "`date +%F_%H-%M_%s`"; ]
 end
 
-task :send => [:remove_cache, :ssend] do
+task :send => [:remove_cache, :msend] do
 	
 end
 
-desc:"Send the changes to the server and open the webpage"
-task :ssend => :commit do
+desc:"Send \"master\" changes to the server"
+task :msend => :commit do
 	puts %x[cd _compiled; git push origin master]
 end
 
