@@ -52,3 +52,11 @@ projects:
         languages:    [Objective C]
         description:  >
             尝试运用CAAnimation, 效果类似UCWeb iPad端右下角的小菜单。
+
+    CCRichTextEditor: &CCRichTextEditor
+        title:        CCRichTextEditor
+        category:     study
+        languages:    [Objective C]
+        description:  >
+            利用UIWebView实现富文本编辑。尝试obj-c与javascript交互。
+
