@@ -6,7 +6,6 @@ isOriginal: true
 category: iOS-dev
 tags:
  - UIWebView
- - rich-text-editor
  - iOS
  - javascript
 keywords: UIWebView rich-text-editor iOS javascript
