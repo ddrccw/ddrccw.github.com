@@ -15,7 +15,7 @@
 2. `cd ddrccw`
 3. `mkdir _cache`
 
-	_cache       //如果你有自己的开源项目，参考_config.yml里的写法，会自动将项目的README.md download放置其中，最终build出一个适合本站主题的README页面
+	_cache       //如果你有自己的开源项目，参考_config.yml里的写法，会自动将项目的README.md download后并放置其中，最终build出一个适合本站主题的README页面
 
 4. `git clone https://github.com/ddrccw/ddrccw.github.com.git _compiled`
 
@@ -34,21 +34,23 @@
 
 1. `rake build`      用jekyll合成站点页面
 
-2. `rake ssend`      pushes the compiled version to github.
+2. `rake msend`      pushes the compiled version to github.
 
 3. `rake send`       pushes the compiled version to github, after deleted the cache.
 
-4. `rake kill`       本地jekyll调试后，kill掉状态为T的jekyll和rake进程。
+4. `rake update`     push the source branch to github
 
-5. `rake localtest`  本地jekyll调试用。
+5. `rake kill`       本地jekyll调试后，kill掉状态为T的jekyll和rake进程。
 
-6. `rake new article-title`  自动生成一个模板编辑页面，并用Mou打开
+6. `rake localtest`  本地jekyll调试用。
+
+7. `rake new article-title`  自动生成一个模板编辑页面，并用Mou打开
 
 ***ps:***
 
 1. source分支的更新，直接在source分支下`git push origin HEAD`或`rake update`
 
-2. master的更新，在source分支下rake ssend
+2. master的更新，在source分支下`rake send`或`rake msend`
     
 
 ###Licence###

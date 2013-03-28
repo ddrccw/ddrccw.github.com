@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>_plugins/archives.rb</string>
+	<string>_posts/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview.md</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,28 +21,42 @@
 	<integer>201</integer>
 	<key>metaData</key>
 	<dict>
-		<key>_plugins/archives.rb</key>
+		<key>Readme.md</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>34</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>34</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
-		<key>_posts/2012-02-22-vmware8-install-lion.md</key>
+		<key>_config.yml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>9</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>46</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>21</integer>
+		</dict>
+		<key>_posts/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview.md</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>162</integer>
+				<key>line</key>
+				<integer>20</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -52,8 +66,9 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>_posts/2012-02-22-vmware8-install-lion.md</string>
-		<string>_plugins/archives.rb</string>
+		<string>_posts/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview.md</string>
+		<string>Readme.md</string>
+		<string>_config.yml</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
