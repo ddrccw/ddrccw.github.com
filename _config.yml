@@ -29,6 +29,11 @@ url:       http://ddrccw.github.com
 
 recent_post_listing_limit: 10        #single page only has 10 articles
 
+Links:
+    
+    Lontoken: &Lontoken
+        title:       Lontoken's Blog
+        url:         http://www.lontoken.com/
 
 #-----demo--------
 #projects:
