@@ -59,4 +59,4 @@
 
 
 
-copy right @ ddrccw  |  主题由[Bilal Syed Hussain](http://bilalh.github.com)提供
+Copyright © ddrccw  |  主题由[Bilal Syed Hussain](http://bilalh.github.com)提供

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>_posts/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview.md</string>
+	<string>_layouts/post.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,42 +21,14 @@
 	<integer>201</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Readme.md</key>
+		<key>_layouts/post.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>34</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>34</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>3</integer>
-		</dict>
-		<key>_config.yml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>9</integer>
-				<key>line</key>
-				<integer>46</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>21</integer>
-		</dict>
-		<key>_posts/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview.md</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>162</integer>
-				<key>line</key>
-				<integer>20</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -66,13 +38,11 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>_posts/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview.md</string>
-		<string>Readme.md</string>
-		<string>_config.yml</string>
+		<string>_layouts/post.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{317, -0}, {963, 778}}</string>
+	<string>{{208, 0}, {1062, 778}}</string>
 </dict>
 </plist>
