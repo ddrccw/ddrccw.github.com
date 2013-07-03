@@ -7,11 +7,11 @@ end
 
 desc:"local server test"
 task :localtest => :kill do
-	system("jekyll --server")   #not inclue blog.html
+	system("jekyll serve --watch")   #not inclue blog.html
 end
 
 task :build do
-	system("jekyll")
+	system("jekyll build")
 	`mv _site/blog.html _site/blog/index.html`  #for the sake of the limitation of jekyll-pagenation
 end
 

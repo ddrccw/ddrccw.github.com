@@ -1,6 +1,7 @@
 source:      .
 destination: ./_site
 plugins:     ./_plugins
+timezone:    Asia/Shanghai
 
 #server:   false
 author:   ddrccw
