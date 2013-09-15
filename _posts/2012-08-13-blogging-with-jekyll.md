@@ -114,7 +114,11 @@ sudo ln -s <py25-pygments> <pygments>  #非必须：因为jekyll只能识别pygm
 1. `git clone https://github.com/Bilalh/bilalh.github.com.git`
 2. 安装必要的插件工具
 	
-	`sudo gem install nokogiri sass growl`
+	`sudo gem install nokogiri sass growl jekyll-pagination`
+
+	//补充 2013.9.15
+
+	ps: 因为jekyll升级到1.2.1，导致jekyll-pagination在jekyll build失败的问题，处理方法参考<https://github.com/blackwinter/jekyll-pagination/issues/3>。我是在安装jekyll-pagination 0.0.4后，手动到目录修改它的pagination.rb代码为它在github上的最新代码即可。
 	
 3. 按需更改
 	- 与原作者相关的所有信息

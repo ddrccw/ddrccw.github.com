@@ -7,17 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "",
-			"file": "/ddrccw",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -43,6 +32,7 @@
 	},
 	"file_history":
 	[
+		"/ddrccw"
 	],
 	"find":
 	{
@@ -50,9 +40,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/user/Desktop/ccw/ddrccw.github.com"
 		]
 	},
 	"find_state":
@@ -60,6 +51,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pagination"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -77,35 +69,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/ddrccw",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -165,6 +130,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 198.0,
+	"side_bar_width": 263.0,
 	"status_bar_visible": true
 }

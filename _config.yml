@@ -17,11 +17,11 @@ disqus_short_name: ddrccw
 #plugin jekyll-pagination at blog.html
 paginate: 5
 paginate_files: 
-  - blog.html
+ - blog.html
 
 
 permalink: /:year/:month/:day/:title
-exclude:   ["Rakefile", "CNAME", "ddrccw.tmproj"]
+exclude:   ["Rakefile", "CNAME", "ddrccw.tmproj", "ddrccw.sublime-project", "ddrccw.sublime-workspace"]
 title:     ddrccw's library
 url:       http://ddrccw.github.com
 
