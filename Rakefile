@@ -54,7 +54,7 @@ end
 
 desc:"update source files"
 task :update do
-  if `git st | tail -1 | xargs echo -n` == "nothing to commit (working directory clean)"
+  if `git st | tail -1 | xargs echo -n`.start_with?("nothing to commit")
     puts %x[git push origin HEAD]
   else
     puts "UPDATE FAILED:exists sth to commit!!!"
