@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS开发过程中常见的debug技巧
-date: 2012-09-04 16:21:55
+date: 2012-09-04 16:21:55 +0800
 isOriginal: true
 category: iOS-dev
 tags:

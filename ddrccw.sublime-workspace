@@ -7,6 +7,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "_config.yml",
+			"settings":
+			{
+				"buffer_size": 1958,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/2012-08-13-blogging-with-jekyll.md",
+			"settings":
+			{
+				"buffer_size": 4418,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -32,6 +48,9 @@
 	},
 	"file_history":
 	[
+		"/Users/ddrccw/Desktop/ddrccw.github.com/_posts/2013-01-28-daily-build-and-create-ipa-using-shell-script.md",
+		"/Users/ddrccw/Desktop/ddrccw.github.com/_posts/2012-08-13-blogging-with-jekyll.md",
+		"/Users/ddrccw/Desktop/ddrccw.github.com/_config.yml",
 		"/ddrccw"
 	],
 	"find":
@@ -43,6 +62,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"",
 			"/Users/user/Desktop/ccw/ddrccw.github.com"
 		]
 	},
@@ -51,6 +71,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tag",
+			"Jekyll",
+			"tag",
+			"html",
+			"lib",
+			"generate",
+			"generator",
+			"jekyll/pagination",
+			"paginator",
 			"pagination"
 		],
 		"highlight": true,
@@ -69,8 +98,64 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "_config.yml",
+					"settings":
+					{
+						"buffer_size": 1958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								323,
+								323
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 310.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_posts/2012-08-13-blogging-with-jekyll.md",
+					"settings":
+					{
+						"buffer_size": 4418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3003,
+								3020
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1773.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -130,6 +215,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 263.0,
+	"side_bar_width": 256.0,
 	"status_bar_visible": true
 }
