@@ -35,6 +35,9 @@ Links:
     Lontoken: &Lontoken
         title:       Lontoken's Blog
         url:         http://www.lontoken.com/
+    pwq1989: &pwq1989
+        title:       右席的搬砖日记
+        url:         http://www.cppblog.com/pwq1989/
 
 #-----demo--------
 #projects:
