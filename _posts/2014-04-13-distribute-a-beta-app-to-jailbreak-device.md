@@ -62,7 +62,7 @@ NSString *serviceUrl = @"itms-services://?action=download-manifest&url=<plist-en
 
 前面提到的可控之处，其实也就在于那个url的使用。用Charles捕捉一下请求，可以发现上述两行代码交给iOS处理后的结果，就是利用里面的url参数发了个GET请求，最终在response的body里面返回指定的plist文件。
 
-同理，你可以发现plist里面的ipa以及icon的url也是可以操作的，其中ipa的url会发一个HEAD和一个POST请求（需要在POST请求中返回ipa包数据），icon的url则是会发一个GET请求。
+同理，你可以发现plist里面的ipa以及icon的url也是可以操作的，其中ipa的url会发一个HEAD和一个GET请求（需要在POST请求中返回ipa包数据），icon的url则是会发一个GET请求。
 
 既然url可以定制，相信后台童鞋也可以利用起来做检验或其他操作。
 
