@@ -9,7 +9,7 @@ lsi:      false
 safe:     false
 markdown: rdiscount
 #markdown: maruku
-pygments: true
+highlighter: pygments
 
 github_user:  ddrccw
 disqus_short_name: ddrccw
