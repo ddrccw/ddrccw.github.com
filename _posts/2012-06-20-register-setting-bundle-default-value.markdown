@@ -8,6 +8,8 @@ tags:
  - iOS
  - Settings.bundle
 keywords: iOS Settings.bundle
+description: 所谓的Settings Bundle就是把一个名为Settings.bundle的文件放置于你的app的根目录下。该文件可以被系统的Settings.app所用，来配置你自己的app的一些设置。
+
 ---
 
 

@@ -9,7 +9,7 @@ tags:
  - jailbreak
  - beta-test
 keywords: iOS jailbreak beta-test
-description: 
+description: 在越狱设备上如何方便地主动更新测试版本app
 ---
 
 ## 前言

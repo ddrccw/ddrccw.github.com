@@ -9,7 +9,8 @@ tags:
  - upgrade
  - UINavigationBar
 keywords: upgrade ios6 rotation 旋转 UINavigationBar
-description: 
+description: 手头上的项目开发时原本跑的板子是ipad2（ipad5.1.1），但考虑到客户那边到时会购买新的ipad，势必要让现阶段的代码能够在ios6上运行，故花了点时间做了一下适配工作。已下讨论到的问题仅在我的适配过程中遇到，并不涵盖升级app到ios6的全部问题。
+
 ---
 
 ## 前言
