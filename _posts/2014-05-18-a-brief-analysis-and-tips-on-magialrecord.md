@@ -124,7 +124,7 @@ context的管理我觉得是最最核心的部分，因为它一方面涉及了�
 
 3. core data stack
 
-	实际开发过程中，可以发现有些对象数据不需要存入数据库，那么[MagicalRecord][1]的默认的[core data stack][4]模型也就不足以满足需求。不过还好一个PersistentStoreCoordinator同时支持多个PersistentStore，也就是说可以同时有`NSSQLiteStoreType`和`NSInMemoryStoreType`。了解了这一点后，剩下的也就是需要稍微利用一下[MagicalRecord][1]的一些方法实现整个stack的setup，实现起来并不复杂~
+	实际开发过程中，可以发现有些对象数据不需要存入数据库，那么[MagicalRecord][1]的默认的[core data stack][4]模型也就不足以满足需求。不过还好一个PersistentStoreCoordinator同时支持多个PersistentStore，也就是说可以同时有`NSSQLiteStoreType`和`NSInMemoryStoreType`。了解了这一点后，剩下的也就是需要稍微利用一下[MagicalRecord][1]的一些方法自己实现整个stack的setup，实现起来并不复杂~
 
 ### 总结
 
