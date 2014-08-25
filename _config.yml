@@ -21,7 +21,7 @@ paginate_path: "blog/page:num"
 permalink: /:year/:month/:day/:title
 exclude:   ["Rakefile", "CNAME", "ddrccw.tmproj", "ddrccw.sublime-project", "ddrccw.sublime-workspace"]
 title:     ddrccw's library
-url:       http://ddrccw.github.com
+url:       http://ddrccw.github.io
 
 #category_title_prefix
 #category_meta_description_prefix
