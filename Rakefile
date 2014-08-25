@@ -7,12 +7,11 @@ end
 
 desc:"local server test"
 task :localtest => :kill do
-	system("jekyll serve --watch")   #not inclue blog.html
+	system("jekyll serve --watch --verbose")   #not inclue blog.html
 end
 
 task :build do
-	system("jekyll build")
-	`mv _site/blog.html _site/blog/index.html`  #for the sake of the limitation of jekyll-pagenation
+	system("jekyll build -t")
 end
 
 desc:"Refreshes the web page in Firefox"

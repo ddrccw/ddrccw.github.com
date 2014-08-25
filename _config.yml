@@ -16,9 +16,7 @@ disqus_short_name: ddrccw
 
 #plugin jekyll-pagination at blog.html
 paginate: 5
-paginate_files: 
- - blog.html
-
+paginate_path: "blog/page:num"
 
 permalink: /:year/:month/:day/:title
 exclude:   ["Rakefile", "CNAME", "ddrccw.tmproj", "ddrccw.sublime-project", "ddrccw.sublime-workspace"]
