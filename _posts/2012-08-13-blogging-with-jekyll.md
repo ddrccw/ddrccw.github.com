@@ -98,6 +98,9 @@ sudo port install python25 py25-pygments
 sudo ln -s <py25-pygments> <pygments>  #非必须：因为jekyll只能识别pygments这个名称，但是port下来的可执行文件的名称可能并不是pygments，所以我在这里创建符号链接
 {% endhighlight %}
 
+//2015.6.25
+
+jekyll升级到2.5.3后，pygments自带了，可以省略这步。
 
 #### 2.3 Last But Not The Least
 
@@ -116,7 +119,9 @@ sudo ln -s <py25-pygments> <pygments>  #非必须：因为jekyll只能识别pygm
 	
 	~~`sudo gem install nokogiri sass growl jekyll-pagination`~~
 
-	`sudo gem install nokogiri sass growl`
+	~~`sudo gem install nokogiri sass growl`~~
+
+	`sudo gem install nokogiri growl`
 
 	//2013.9.15
 
@@ -126,7 +131,10 @@ sudo ln -s <py25-pygments> <pygments>  #非必须：因为jekyll只能识别pygm
 	
 	因为jekyll升级到2.3.0后，自带一个`jekyll-paginate`，所以不再需要`jekyll-pagination`
 	
-	
+	//2015.6.25
+
+	jekyll升级到2.5.3后，`sass`也不再需要了
+
 3. 按需更改
 	- 与原作者相关的所有信息
 	

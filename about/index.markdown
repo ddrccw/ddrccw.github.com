@@ -8,17 +8,19 @@ no_sidebar: true
 
 80后挨踢攻城狮一枚。微宅，喜欢ACG。现从事iOS开发。
 
-对前端技术，搜索引擎，数据挖掘和电子商务等领域有浓厚兴趣。
+对前端技术，电子商务等领域有浓厚兴趣。
 
 ## Skills ##
 
 ### Experienced ###
 * Objective C
+* swift
 * Linux C/C++
 * Bash shell scripts
-* SQL
 * JavaScript and HTML（Extjs, JQuery）
+* SQL
 * .NET and java
+* ...
 
 ### Others ###
 * Vim

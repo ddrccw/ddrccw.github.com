@@ -8,7 +8,6 @@ author:   ddrccw
 lsi:      false
 safe:     false
 markdown: rdiscount
-#markdown: maruku
 highlighter: pygments
 
 github_user:  ddrccw
