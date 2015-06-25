@@ -28,7 +28,7 @@ url:       http://ddrccw.github.io
 recent_post_listing_limit: 10        #single page only has 10 articles
 
 Links:
-    
+
     Lontoken: &Lontoken
         title:       Lontoken's Blog
         url:         http://www.lontoken.com/
@@ -65,4 +65,18 @@ projects:
         languages:    [Objective C]
         description:  >
             利用UIWebView实现富文本编辑。尝试obj-c与javascript交互。 使用AudioSession实现录音及播放。
+
+    CCCircleSpinLayer: &CCCircleSpinLayer
+        title:        CCCircleSpinLayer
+        category:     实战
+        languages:    [Objective C]
+        description:  >
+            Circle spinner referred to SpinKit and SpinKit-ObjC。
+
+    CCScrollableHeaderTabViewController: &CCScrollableHeaderTabViewController
+        title:        CCScrollableHeaderTabViewController
+        category:     实战
+        languages:    [Objective C]
+        description:  >
+            云课堂，中国大学mooc的课程详情页用到的组件。
 
