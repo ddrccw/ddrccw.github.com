@@ -1,6 +1,6 @@
 source:      .
 destination: ./_site
-plugins:     ./_plugins
+plugins_dir:     ./_plugins
 timezone:    Asia/Shanghai
 
 #server:   false
@@ -14,6 +14,7 @@ github_user:  ddrccw
 disqus_short_name: ddrccw
 
 #plugin jekyll-pagination at blog.html
+gems: [jekyll-paginate]
 paginate: 5
 paginate_path: "blog/page:num"
 
@@ -52,6 +53,34 @@ Links:
 
 projects:
 
+    CCCircleSpinLayer: &CCCircleSpinLayer
+        title:        CCCircleSpinLayer
+        category:     实战
+        languages:    [Objective C]
+        description:  >
+            Circle spinner referred to SpinKit and SpinKit-ObjC。
+
+    CCScrollableHeaderTabViewController: &CCScrollableHeaderTabViewController
+        title:        CCScrollableHeaderTabViewController
+        category:     实战
+        languages:    [Objective C]
+        description:  >
+            云课堂，中国大学mooc的课程详情页用到的组件。
+
+    CCTransition: &CCTransition
+        title:        CCTransition
+        category:     实战
+        languages:    [Objective C]
+        description:  >
+            云课堂，中国大学mooc转场动画组件。
+
+    CCRotation: &CCRotation
+        title:        CCRotation
+        category:     实战
+        languages:    [Objective C]
+        description:  >
+            基于CoreMotion检测设备方向
+
     CCChainedMenu: &CCChainedMenu
         title:        CCChainedMenu
         category:     study
@@ -66,17 +95,19 @@ projects:
         description:  >
             利用UIWebView实现富文本编辑。尝试obj-c与javascript交互。 使用AudioSession实现录音及播放。
 
-    CCCircleSpinLayer: &CCCircleSpinLayer
-        title:        CCCircleSpinLayer
-        category:     实战
-        languages:    [Objective C]
-        description:  >
-            Circle spinner referred to SpinKit and SpinKit-ObjC。
 
-    CCScrollableHeaderTabViewController: &CCScrollableHeaderTabViewController
-        title:        CCScrollableHeaderTabViewController
-        category:     实战
-        languages:    [Objective C]
-        description:  >
-            云课堂，中国大学mooc的课程详情页用到的组件。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

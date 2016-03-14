@@ -8,8 +8,6 @@ no_sidebar: true
 
 80后挨踢攻城狮一枚。微宅，喜欢ACG。现从事iOS开发。
 
-对前端技术，电子商务等领域有浓厚兴趣。
-
 ## Skills ##
 
 ### Experienced ###
@@ -17,9 +15,8 @@ no_sidebar: true
 * swift
 * Linux C/C++
 * Bash shell scripts
-* JavaScript and HTML（Extjs, JQuery）
+* JavaScript and HTML（Extjs, JQuery, etc.）
 * SQL
-* .NET and java
 * ...
 
 ### Others ###
