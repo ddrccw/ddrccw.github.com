@@ -51,10 +51,10 @@ description: 在越狱设备上如何方便地主动更新测试版本app
 
 其实，要实现qq那种效果的下载，最最基本的是要模拟常规安装页面那里的点击下载请求。在app中添加代码如下：
 
-{% highlight objc tabsize=4 %}
+```objc
 NSString *serviceUrl = @"itms-services://?action=download-manifest&url=<plist-encoded-url>";
 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:serviceUrl]];
-{% endhighlight %}
+```
 
 其他只需要沿用《[再谈使用shell脚本build并创建ipa文件][0]》中产出的相关文件及部署。那么这样看是不是很简单，如果只是内测用的话，到这里其实也就差不多了。但是从公测的角度上看，对安全比较敏感的童鞋应该不会止步于此。
 

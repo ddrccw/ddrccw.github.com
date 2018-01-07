@@ -12,7 +12,7 @@ keywords: UIWebView rich-text-editor iOS javascript
 description: how to make a rich text editor in UIWebView
 ---
 
-##正文
+## 正文
 
 最近的一个ipad项目有需求，需要在iOS客户端上实现一个笔记功能。由于之前的一个版本对于笔记的功能要求不高，我也只是用UITextView实现了简单的录入。但是接下来的一个版本对于笔记的功能则是希望有web端富文本编辑器的所见即所得的效果。
 
@@ -22,7 +22,7 @@ description: how to make a rich text editor in UIWebView
 
 权衡利弊，最终我还是决定用UIWebView来实现富文本编辑。这里先感叹下HTML5的强大。 ^_^
 
-###实现
+### 实现
 
 参看国外某大大的《[iOS 5 Rich Text Editing Series][2]》，确实给了我很大的帮助。
 仔细研读了一下其中的代码，我发现实现起来并不是我原本想象中的那么复杂。关键点概述如下：
@@ -40,11 +40,11 @@ description: how to make a rich text editor in UIWebView
 
 具体代码参看可以[点我][7]。
 
-###遇到的问题
+### 遇到的问题
 
 [ayangxu][1]的PPT讨论了不少可能出现的问题（虽然我也没都遇到-。-）。我也顺便补充个小问题好了。
 
-####弹出的UIMenuController
+#### 弹出的UIMenuController
 
 平常使用时，往往可以通过方法
 
@@ -54,9 +54,9 @@ description: how to make a rich text editor in UIWebView
 
 另外，UIWebView在ios5上使用时，弹出的UIMenuController的系统menuItem中没有BIU的选项。iOS6中则有，相当于有个二级菜单包含加粗，斜体和下划线。
 
-##引申
+## 引申
 
-###UIWebView中javascript调试相关
+### UIWebView中javascript调试相关
 
 当要写的javascript代码比较复杂时，尽管可以通过alert的方法调试，但是console的log等方法输出的信息，却是不可见的。还好stackoverflow上有人提供了一个[解决方案][8]，使得log的信息可以输出到xcode的debug终端。
 

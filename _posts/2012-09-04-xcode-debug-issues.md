@@ -103,13 +103,13 @@ Xcode中，如图1，在xcode菜单栏->product->edit scheme，可以添加相�
 
 实际开发过程中，EXC_BAD_ACCESS，objc_msgSend相关的crash往往和retain、release不当有关，可以利用上述的两个环境变量检测问题。例如下述代码
 
-{% highlight objc %}
+```objc
 NSObject *o = [NSObject new];  
 NSMutableArray *test = [[NSMutableArray alloc] initWithCapacity:1];
 [test release];
 [test addObject:o];
 [o release];
-{% endhighlight %}
+```
 
 开启NSZombieEnabled，可以获得信息：
 

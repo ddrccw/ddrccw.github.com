@@ -66,7 +66,7 @@ The memory used by a view to draw itself onscreen is potentially quite large. Ho
 
 view相关对象的内存管理似乎交给了系统，而didReceiveMemoryWarning依然重点关注释放那些不重要的数据结构。当然，想要显式释放view相关对象也是可以的，请参考
 
-{% highlight objc tabsize=4 %}
+```objc
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -82,7 +82,7 @@ view相关对象的内存管理似乎交给了系统，而didReceiveMemoryWarnin
         self.otherView = nil;  //add by me
     }
 }
-{% endhighlight %}
+```
 					
 适配过程，只要参考上面的说明更改即可。我的app内存要求不高，所以暂时不采用显式管理的方法。
 

@@ -57,7 +57,7 @@ description: tips on changing orientation
 
 首先，看下接手公开课代码时看到的第一版代码，内容基本如下：
 
-{% highlight objc %}
+```objc
 [UIView animateWithDuration:duration animations:^{
 	CGSize size = [UIScreen mainScreen].bounds.size;
     playerView_.frame = CGRectMake(0, 0, size.height, size.width);
@@ -65,13 +65,13 @@ description: tips on changing orientation
     CGRect frame = self.navigationController.view.bounds;
     self.navigationController.view.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.height, frame.size.width);
 } completion:nil];
-{% endhighlight %}
+```
 
 照前面的分析来说，这段代码似乎没有问题，而且正常流程下从点击课程进入课程详情页里操作播放器旋转并使之变为全屏也没出现问题，但是坑爹的是，当navigationController被present后，再操作播放器，结果竟然是navigationController转了90度，但是播放器的frame动画却没有起作用了。
 
 由于第一版代码先入为主的影响，刚开始还为是transform作用的view不对，我又一级一级从UIWindow一直到playerView_的各层view做了transform的尝试，当然问题依然存在。。。后来过了一宿，冷静思考了一下（果然还是不能太钻牛角尖啊= =），隐约觉得transform和frame的动画相互影响了，所有也就有了下述代码：
 
-{% highlight objc %}
+```objc
 [UIView animateWithDuration:0 animations:^{
 	self.playerContainerView.transform = CGAffineTransformMakeRotation(M_PI_2);
 } completion:^(BOOL finished) {
@@ -79,7 +79,7 @@ description: tips on changing orientation
 		self.playerContainerView.frame = self.navigationController.view.bounds;
 	}];
 }];
-{% endhighlight %}
+```
 
 上述代码解决了前面出现的问题，它和第一版的区别有：
 

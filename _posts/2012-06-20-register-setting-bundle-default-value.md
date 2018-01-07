@@ -27,7 +27,7 @@ description: 所谓的Settings Bundle就是把一个名为Settings.bundle的文�
 
 经过一番查询，可以得出结论目前ios sdk (<= 5.1.1)未提供直接获取默认值的方法，需要自己实现。如下：
 
-{% highlight objc tabsize=4 %}
+```objc
 - (void)registerDefaultsFromSettingsBundle {
     [[NSUserDefaults standardUserDefaults] registerDefaults:[self defaultsFromPlistNamed:@"Root"]];
 }
@@ -65,7 +65,7 @@ description: 所谓的Settings Bundle就是把一个名为Settings.bundle的文�
 
     return defaults;
 }
-{% endhighlight %}
+```
 
 **说明**
 

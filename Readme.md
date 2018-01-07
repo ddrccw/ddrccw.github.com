@@ -1,12 +1,12 @@
-##ddrccw's library##
+## ddrccw's library 
 
-###Prerequisites###
+### Prerequisites 
 
 * Ruby (only tested with 1.9)及相关组件
 
 	gem install nokogiri sass growl
 	
-###Install###
+### Install 
 
 1. `git clone https://github.com/ddrccw/ddrccw.github.com.git ddrccw`
 
@@ -30,7 +30,7 @@
 
 基本想法：git clone两次，在source分支中编辑blog的相关的内容，在_compile里checkout至master，将由source分支中jekll合成的html同步到_compile，最后git commit到github服务端的master下。
 
-###Rakefile###
+### Rakefile 
 
 1. `rake build`      用jekyll合成站点页面
 
@@ -53,7 +53,7 @@
 2. master的更新，在source分支下`rake send`或`rake msend`
     
 
-###Licence###
+### Licence 
 
 [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh)
 

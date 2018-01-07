@@ -7,22 +7,46 @@ timezone:    Asia/Shanghai
 author:   ddrccw
 lsi:      false
 safe:     false
-markdown: rdiscount
-highlighter: pygments
 
 github_user:  ddrccw
 disqus_short_name: ddrccw
 
 #plugin jekyll-pagination at blog.html
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate: 5
 paginate_path: "blog/page:num"
+
+# Conversion
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processors
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  auto_ids:       true
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1
+  show_warnings:  false
+
 
 permalink: /:year/:month/:day/:title
 exclude:   ["Rakefile", "CNAME", "ddrccw.tmproj", "ddrccw.sublime-project", "ddrccw.sublime-workspace"]
 title:     ddrccw's library
 url:       http://ddrccw.github.io
-
+baseurl:   /
 #category_title_prefix
 #category_meta_description_prefix
 

@@ -25,12 +25,13 @@ description: 记分享模块开发遇到的几个问题
 
 说到url encode。首先参考[rfc2396][1]和[rfc3986][2]。
 
->
-   The generic URI syntax consists of a hierarchical sequence of
-   components referred to as the scheme, authority, path, query, and
-   fragment.
->
-      URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
+```
+The generic URI syntax consists of a hierarchical sequence of
+components referred to as the scheme, authority, path, query, and
+fragment.
+
+URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
+```
 
 一般来说，一个url符合如上规范，是由多个component组成的。每个component中可能还包含子component，比如query中可能会有多个参数。因此，就规范定义了一些保留字符用来分割界定这些component，对应前面的例子就是参数之间的`&`符号。如果需要在传递的参数中包含保留字符，就需要url encode，把保留字符转义成`%HEXHEX`的格式。另外，还有非保留字符和包含有特定意义的标识数据（Identifying Data）。
 
@@ -41,19 +42,23 @@ description: 记分享模块开发遇到的几个问题
 以下附上[rfc2396][1]和[rfc3986][2]的保留字符和非保留字符
 
 [rfc2396][1] 中，
->
-      reserved    = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" |
-                    "$" | ","
-      unreserved  = alphanum | mark
-      mark        = "-" | "_" | "." | "!" | "~" | "*" | "'" | "(" | ")"
+
+```
+     reserved    = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" |
+                  "$" | ","
+     unreserved  = alphanum | mark
+     mark        = "-" | "_" | "." | "!" | "~" | "*" | "'" | "(" | ")"
+```
 
 [rfc3986][2] 中,
->
+
+```
       reserved    = gen-delims / sub-delims
       gen-delims  = ":" / "/" / "?" / "#" / "[" / "]" / "@"
       sub-delims  = "!" / "$" / "&" / "'" / "(" / ")"
                   / "*" / "+" / "," / ";" / "="
       unreserved  = ALPHA / DIGIT / "-" / "." / "_" / "~"
+```
 
 
 回到我遇到的问题上来，`&`字符是保留字符，如果要作为参数的一部分，就需要在encode函数中的转义字符集中加上`&`字符。
@@ -82,7 +87,7 @@ mail links的格式，直接参考[官方文档][7]。
 
 例子代码如下：
 
-{% highlight objc %}
+```objc
 
 NSString *body = @"Hey!I wanted to send you this link to check out: <a href='http://www.google.com'>google</a>";
 NSString *utfEncoded = [body stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; 
@@ -90,7 +95,7 @@ NSString *urlString = [NSString stringWithFormat:@\"mailto:?subject=test&body=%@
 NSURL *url = [[NSURL alloc] initWithString:urlString];
 [[UIApplication sharedApplication] openURL:url];
 
-{% endhighlight %}
+```
 
 
 ## 参考资料

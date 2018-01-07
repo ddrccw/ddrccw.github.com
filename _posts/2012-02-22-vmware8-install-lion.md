@@ -12,11 +12,11 @@ description: Vmware 8安装Lion
 ---
 
 
-##1 前言##
+## 1 前言
 
 苹果系统对Intel的CPU支持较好，以下的安装可能不适用于AMD的CPU（我的电脑是Inspiron 灵越™ 14R锋型版,win7 64位）
 
-##2 准备##
+## 2 准备
 
 * VMware-workstation-full-8.0.2-591240.exe      虚拟机软件
 * [unlock-all-v102][1]  破解补丁，用于虚拟机安装Mac操作系统
@@ -24,9 +24,9 @@ description: Vmware 8安装Lion
 * 7-zip  抽取数据用。
 * ultraISO 将dmg转换成ISO
 
-##3 步骤##
+## 3 步骤
 
-###3.1 安装虚拟机，并打好破解补丁。###
+### 3.1 安装虚拟机，并打好破解补丁。
 
 虚拟机安装就不多说了，打补丁前，请将以下服务先停止（运行services.msc，在“服务”中操作）。
 
@@ -39,7 +39,7 @@ description: Vmware 8安装Lion
 打补丁：以系統管理員身份執行 unlock-all-v102\windows里的install.cmd
 然后再将先前停止的服务启动。
 
-###3.2 提取mac系统文件并转成iso###
+### 3.2 提取mac系统文件并转成iso
 因为下好的Mac操作系统文件是dmg，需要先用7-zip打开，将Mac OSX Lion 10.7.3 Retail.dmg\InstallMacOSX.pkg\InstallESD.dmg其抽取出来
 
 ![alt 系统文件转换iso](/images/posts/vmware8-install-lion/3.2-1.jpeg "抽取dmg")
@@ -48,9 +48,9 @@ description: Vmware 8安装Lion
 
 ![alt 系统文件转换iso](/images/posts/vmware8-install-lion/3.2-2.jpeg "dmg格式转换")
 
-##3.3 安装mac lion系统##
+## 3.3 安装mac lion系统
 
-###3.3.1 创建虚拟机###
+### 3.3.1 创建虚拟机
 
 1. 选择自定义创建
 
@@ -69,7 +69,7 @@ description: Vmware 8安装Lion
 	* 设置CD/DVD→高級设置→SCSI 0:2
 	* 设置显卡→3D图形加速
 
-###3.3.2 安装mac lion虚拟机###
+### 3.3.2 安装mac lion虚拟机
 
 0. 准备安装
 
@@ -97,16 +97,16 @@ description: Vmware 8安装Lion
 
 	![alt 体验](/images/posts/vmware8-install-lion/3.3.2-3.jpeg "体验")
 
-##3.3.3  安装VMware Tools，是为了能够调整分辨率##
+## 3.3.3  安装VMware Tools，是为了能够调整分辨率
 
-	安裝VMware Tools，需要加载unlock-all-v102\tools\darwin.iso鏡像文件。
+安裝VMware Tools，需要加载unlock-all-v102\tools\darwin.iso鏡像文件。
 
 
 ![alt 其他](/images/posts/vmware8-install-lion/3.3.3-1.jpeg "其他")
 ![alt 其他](/images/posts/vmware8-install-lion/3.3.3-2.jpeg "其他")
 
-	这样Mac系统就安装完了，好好玩吧^_^~~~~~~
 
+这样Mac系统就安装完了，好好玩吧^_^~~~~~~
 
 
 [1]: http://pan.baidu.com/share/link?shareid=6830&uk=1678482707

@@ -44,17 +44,17 @@ description: 利用源码的方式导入ZBar作为第三方library
 ![alt user-defined-setting](/images/posts/import-zbar-source-code/2.2.jpeg "user-defined-setting")
 
 >***EXCLUDED_SOURCE_FILE_NAMESany***
-
+>
 >iOS simulator sdk
 >    `ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m`
-
+>
 >any iOS sdk
 >    `ZBarReaderViewImpl_Simulator.m`
-
+>
 >GCC_MODEL_TUNING `G5`
-
+>
 >PREBINDING `NO`
-
+>
 >USE_HEADERMAP `NO`
 
 
@@ -67,14 +67,14 @@ description: 利用源码的方式导入ZBar作为第三方library
    * libiconv.dylib
 
 **4. 在prefix.pch 中添加相应的头文件**
-{% highlight objc %}
+```objc
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreMedia/CoreMedia.h>
 #import <CoreVideo/CoreVideo.h>
 #import "ZBarSDK.h"       //zbar sdk required
-{% endhighlight %}
+```
 
 **5. 确定哪些是要编译的源码**
 

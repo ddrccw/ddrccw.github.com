@@ -42,7 +42,7 @@ description: tip on date
 
 代码如下：
 
-{% highlight objc linenos %}
+```objc
  NSLog(@"current locale(%@) and timezone(%@)", [[NSLocale currentLocale] localeIdentifier], [NSTimeZone systemTimeZone]);
  NSCalendar *calendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
  NSDate *date = [NSDate date];
@@ -92,10 +92,10 @@ description: tip on date
        formatter.locale.localeIdentifier,
        formatter.timeZone,
        [formatter dateFromString:dateString]);
-{% endhighlight %}
+```
 
 结果如下：
-{% highlight bash %}
+```bash
 2012-12-31 14:15:06.900 DateTest[1281:707] current locale(zh_CN) and timezone(Asia/Shanghai (CST (China)) offset 28800)
 2012-12-31 14:15:06.903 DateTest[1281:707] defaut description:2012-12-31 06:15:06 +0000
 2012-12-31 14:15:06.906 DateTest[1281:707] current locale description:2012年12月31日星期一 中国标准时间下午2时15分06秒
@@ -111,7 +111,7 @@ description: tip on date
 2012-12-31 14:15:06.917 DateTest[1281:707] 2012年12月31日 下午2:15
 2012-12-31 14:15:06.919 DateTest[1281:707] default locale(zh_CN) timezone(Asia/Shanghai (CST (China)) offset 28800) formatter(date to string):2012-12-31 14:15:06
 2012-12-31 14:15:06.921 DateTest[1281:707] default locale(zh_CN) timezone(Asia/Shanghai (CST (China)) offset 28800) formatter(string to date):2012-12-28 10:00:00 +0000
-{% endhighlight %}
+```
 
 ### 关键点
 

@@ -13,7 +13,7 @@ keywords: Objective-c iOS Goole code-style
 description: learn from Google Objective-C Style Guide
 ---
 
-##前言
+## 前言
 
 之前拜读了《clean code》一书，在它的前言里看到了这样一句经典的话：
 
@@ -24,7 +24,7 @@ description: learn from Google Objective-C Style Guide
 当时顿时就笑喷了，但静下心来一想，虽然可能有些夸张，但是也确实有道理。回想以前接手过的历史遗留代码，有看过比较厉害的前辈，纵然不使用注释，但代码看起来却也让人十分清爽。有的同一个项目但是因为有多人开发，代码风格迥异。更有甚者，即便是同一个人写的几段代码，竟然也能变异出几种风格，看的我甚是蛋疼。。。
 虽然说像geek一样编码，可能是一件十分cool的事，但落实到现实团队合作中，我觉得还是要统一风格才好。毕竟，一个良好的code style也是一个程序员的基本功吧。至少，我不想让下一任接我活的兄弟因此而"记恨于我" ^_^ ~~
 
-##正题
+## 正题
 某天刷weibo发现[程序员的那些事](http://weibo.com/u/2093492691)推荐[《google code style》](http://code.google.com/p/google-styleguide/)，遂花点时间学习了一下 [《C++ Style Guide》](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml)，
 [《Objective-C Style Guide》](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)。
 

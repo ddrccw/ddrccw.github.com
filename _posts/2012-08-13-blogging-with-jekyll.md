@@ -44,21 +44,21 @@ mac下ruby版本太低，要先升级。需要安装rvm。但是还要先解决c
 
 a 获取curl证书 
 
-{% highlight bash %}
+```bash
 curl http://curl.haxx.se/ca/cacert.pem>cacert.pem
-{% endhighlight %}
+```
 
 b 设置相关的环境变量
 
-{% highlight bash %}
+```bash
 export CURL_CA_BUNDLE=~/.ssh/cacert.pem
-{% endhighlight %}
+```
 
 c 安装rvm并设置环境变量
 
-{% highlight bash %}
+```bash
 curl -L get.rvm.io | bash -s stable [[ -s "/Users/<username>/.rvm/scripts/rvm" ]] && source "/Users/	<username>/.rvm/scripts/rvm"    #注意<username>替换成你自己的
-{% endhighlight %}
+```
 
 d 安装ruby
 
@@ -73,34 +73,43 @@ e 安装jekyll
 	
 有了ruby，安装jekyll水到渠成。
 
-{% highlight bash %}
+```bash
 sudo gem install jekyll
-{% endhighlight %}
+```
 
 #### 2.2 jekyll推荐工具
 
-** 2.2.1 安装rdiscount来解析markdown语言 **
+**2.2.1 安装rdiscount来解析markdown语言**
 
 虽然jekyll默认用maruku来解析markdown语言,但都说用c语言实现的rdiscount解析器的速度更快，所以我也直接选择rdiscount。
 
-{% highlight bash %}
+```bash
 sudo gem install rdiscount
-{% endhighlight %}
+```
 
-** 2.2.2 pygments--支持语法高亮，要装python **
+//2018.1.6
+
+官方参考配置使用kramdown
+
+**2.2.2 pygments--支持语法高亮，要装python**
 
 身为挨踢攻城狮的blog，难免要贴一些代码。jekyll虽然原生不支持高亮代码，但支持通过插件工具来高亮代码。[pygments][]就是一个比较流行的插件工具，它支持的语言种类相当丰富。
 
 mac上它可以通过Macports和Homebrew,我习惯使用前者。
 
-{% highlight bash %}
+```bash
 sudo port install python25 py25-pygments
 sudo ln -s <py25-pygments> <pygments>  #非必须：因为jekyll只能识别pygments这个名称，但是port下来的可执行文件的名称可能并不是pygments，所以我在这里创建符号链接
-{% endhighlight %}
+```
 
 //2015.6.25
 
-jekyll升级到2.5.3后，pygments自带了，可以省略这步。
+~~jekyll升级到2.5.3后，pygments自带了，可以省略这步。~~	
+
+//2018.1.6
+
+官方参考配置使用rouge
+
 
 #### 2.3 Last But Not The Least
 
@@ -112,7 +121,7 @@ jekyll升级到2.5.3后，pygments自带了，可以省略这步。
 
 我的站点风格来自`http://bilalh.github.com`
 
-** 2.3.1 代码借鉴 **
+**2.3.1 代码借鉴**
 
 1. `git clone https://github.com/Bilalh/bilalh.github.com.git`
 2. 安装必要的插件工具
@@ -121,7 +130,9 @@ jekyll升级到2.5.3后，pygments自带了，可以省略这步。
 
 	~~`sudo gem install nokogiri sass growl`~~
 
-	`sudo gem install nokogiri growl`
+	~~`sudo gem install nokogiri growl`~~
+
+	`sudo gem install nokogiri growl jekyll-paginate //2018.1.6`
 
 	//2013.9.15
 
@@ -129,7 +140,7 @@ jekyll升级到2.5.3后，pygments自带了，可以省略这步。
 	
 	//2014.8.25
 	
-	因为jekyll升级到2.3.0后，自带一个`jekyll-paginate`，所以不再需要`jekyll-pagination`
+	~~因为jekyll升级到2.3.0后，自带一个`jekyll-paginate`，所以不再需要`jekyll-pagination`~~
 	
 	//2015.6.25
 
@@ -148,7 +159,7 @@ jekyll升级到2.5.3后，pygments自带了，可以省略这步。
 	
 		前者用来分析站点的相关信息，和seo有关，要埋上一些代码。后者是第三方的评论系统，在官网注册个账户，同样在网站里埋上一些代码即可。
 		
-** 2.3.2 发布自己的blog **
+**2.3.2 发布自己的blog**
 
 1. 在自己的github上建个项目，并clone到本地。
 2. 按照Bilalh的blog的设计思想，就是开个source分支来写blog的页面代码，再生成静态页面到master，最终push到github。稍等一会儿就可以通过github访问自己blog啦~~

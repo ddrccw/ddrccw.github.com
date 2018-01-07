@@ -52,7 +52,7 @@ codesign还好说，但是前者，我实在是搞不透它用了啥内建的工
 
 我写的shell脚本如下：
 
-{% highlight bash linenos %}
+```bash
 
 #  Created by chenche on 13-1-21.
 
@@ -144,7 +144,7 @@ rm -rf $IPA_PATH
 
 echo -e "\033[33;40;1m---------<ProductName>.ipa is done.-------------------\033[0m"
 
-{% endhighlight %}
+```
 
 上述脚本的不足之处，大概在对于xcodebuild执行失败未作处理，还是会生成一个无效的ipa。虽然xcodebuild执行的成功会输出“\*\* BUILD SUCCEEDED \*\*”,但总感觉单纯的基于这点的判断有点不靠谱。故还是作罢了，人工判断好了。
 

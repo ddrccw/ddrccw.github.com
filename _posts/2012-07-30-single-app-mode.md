@@ -22,12 +22,12 @@ description: single app mode
 
 经过一番搜索，在万能的stackoverflow上，确实有达人给出了一些线索。
 
-##1. disable home button##
+## 1. disable home button##
 首先，这里需要了解《应用程序分发和部署问题》中提到的 iphone 配置实用工具（IPCU）以及配置描述文件的概念。
 
 然后，准备好配置文件, 因为在此主要关注如何disable home button，所以暂且取名为[disable_home_button.mobileconfig][4]， 内容如下：
 
-{% highlight xml tabsize=4 %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"]]>
@@ -79,7 +79,7 @@ description: single app mode
 		<integer>1</integer>
 	</dict>
 </plist>
-{% endhighlight %}
+```
 
 由于该配置文件中包含有IPCU不能处理的payload项，所以配置文件的部署要通过其他途径，较为可行的是《应用程序分发和部署问题》中提到的 over-the-air 分发profile and configuration。
 
@@ -95,9 +95,9 @@ ps：
 注意：上述步骤只是保证了运行一个app后，无法通过home键回到springboard。所以部署时，不要运行不相关的app。一旦运行错了，需要重新启动，进行相关操作。
 
 
-##2. app crash的处理##
+## 2. app crash的处理##
 
-###2.1 可行的方案探讨###
+### 2.1 可行的方案探讨###
 
 一中提到的方法，只是disable home button，而app crash的情况毕竟在所难免。就算经过一的处理，app crash后仍然能回到springboard。所以为了保证，始终运行一个app，需要寻求一种方案，在app crash之后能重新启动app。其中就需要了解custom url scheme。利用一个restart app来[重启][3]crash 的app。
 
@@ -113,14 +113,14 @@ ps：
 >
 >		[sharedApp openURL:[NSURL URLWithString:@"mykioskapp://"]]
 
-###2.2 crash的捕捉###
+### 2.2 crash的捕捉###
    
 **//todo**
 
 
 *****
 
-##参考文献:##
+## 参考文献:##
 
 1) [iOS 6的介绍][1]
 

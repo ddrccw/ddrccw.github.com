@@ -14,15 +14,15 @@ keywords: Unit-testing iOS OCUnit GHUnit OCMock
 description: unit testing in xcode
 ---
 
-##前言
+## 前言
 
 每次在xcode上建立一个new project，都会看到一个选项提示是否"Include Unit tests"。基于一些考虑，我也确实未在项目中使用过。如今，随着我开发学习的深入，一方面了解了一些TDD的概念，另一方面也确实在一些开源项目(如asi-http-request)中看到Unit test的身影。看来似乎有必要学习一下iOS开发的一些unit test知识，故也就有了此文。
 
-##正文
+## 正文
 
 参考iOS开发单元测试的入门文章《[unit-testing-in-xcode-4-quick-start-guide][1]》，主要有两个比较常见的框架：OCUnit和GHUnit。另外还有一个单元测试中专门用于Mock对象的OCMock。下面容我一一道来。
 
-###OCUnit
+### OCUnit
 
 OCUnit是apple官方的单元测试框架，它的优点就是和xcode集成较好；缺点嘛，就是每次cmd+U执行test，所有的用例都会跑一遍，并且缺少相应的界面进行管理（只是在终端中输出）。试想一下，如果用例很多，开发过程中有时候只是反复跑某个case，而你需要在终端的所有输出中找那个case的结果，肯定会比较不方便。
 
@@ -53,7 +53,7 @@ OCUnit是apple官方的单元测试框架，它的优点就是和xcode集成较�
 
 		+ iOS: $(BUILT_PRODUCTS_DIR)/\<app_name\>.app/\<app_name\>
 
-   		+ Mac: $(BUILT_PRODUCTS_DIR)/\<app_name\>.app/Contents/MacOS/<\app_name\>
+		+ Mac: $(BUILT_PRODUCTS_DIR)/\<app_name\>.app/Contents/MacOS/<\app_name\>
 
 	* Test Host的值
 	
@@ -68,27 +68,31 @@ OCUnit是apple官方的单元测试框架，它的优点就是和xcode集成较�
 引入GHUnit可以参考[文档][3], 下述两点千万不能遗漏：
 
 * 因为GHUnit自带了一个界面来显示Unit Test，需要删除xxxxTests目录下的AppDelegate.h/.m,另外还需要修改其中的main.m 
+
 	+ 删除 #import "AppDelegate.h"
+
     + 修改
     
-    	`return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class])); `
+		`return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class])); `
     	
-    	为
+
+		为
     	
-    	`return UIApplicationMain(argc, argv, nil, @“GHUnitIOSAppDelegate”);`
+
+		`return UIApplicationMain(argc, argv, nil, @“GHUnitIOSAppDelegate”);`
     	
 * 在xxxxTest Target的Building Setting中的Other Linker Flags中添加-ObjC -all_load
 
 还有一点是文档中未写明的，但实际引入过程中会报的问题：
 
-{% highlight bash %}
+```bash
 Undefined symbols for architecture i386:
   "_CACurrentMediaTime", referenced from:
       _GHRunForInterval in GHUnitIOS(GHTestUtils.o)
       _GHRunUntilTimeoutWhileBlock in GHUnitIOS(GHTestUtils.o)
 ld: symbol(s) not found for architecture i386
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
-{% endhighlight %}
+```
     
 只要添加QuartzCore.framework即可。
 
@@ -118,14 +122,15 @@ ps:直接利用源码build framework
 #### 关于使用
 
 因为我的经验也不是很多，就先简单引用下[OCMock作者](http://erik.doernenburg.com/2008/07/testing-cocoa-controllers-with-ocmock/ "Testing Cocoa Controllers with OCMock")总结的一种应用模式吧 :)
->
-In summary, testing controllers becomes relatively easy when we follow this pattern:
 
->	1. Replace all UI elements with mocks; using key-value coding to access the outlets.
-2. Set up stubs with return values for UI elements that the controller will query.
-3. Set up expectations for UI elements that the controller should manipulate.
-4. Invoke the method in the controller.
-5. Verify the expectations.
+>
+>In summary, testing controllers becomes relatively easy when we follow this pattern:
+>
+>1. Replace all UI elements with mocks; using key-value coding to access the outlets.
+>2. Set up stubs with return values for UI elements that the controller will query.
+>3. Set up expectations for UI elements that the controller should manipulate.
+>4. Invoke the method in the controller.
+>5. Verify the expectations.
 
 ## 参考文档
 

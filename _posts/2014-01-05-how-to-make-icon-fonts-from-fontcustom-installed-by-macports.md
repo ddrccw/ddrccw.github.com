@@ -27,13 +27,13 @@ description: Macports安装fontcustom制作中文图标字体
 
 安装这个库是最折腾的。虽然port上可以安装上，但是实际配合fontcustom使用时会报错
 
-{% highlight ruby %}
+```ruby
        debug  Copyright (c) 2000-2012 by George Williams.
                Executable based on sources from 14:57 GMT 31-Jul-2012-ML-NoPython.
                Library based on sources from 14:57 GMT 31-Jul-2012.
               /Users/ddrccw/.rvm/gems/ruby-2.0.0-p247/gems/fontcustom-1.3.1/lib/fontcustom/scripts/generate.py 行: 2 Undefined variable: import
        error  `fontforge` compilation failed.
-{% endhighlight %}
+```
 
 看样子似乎是port安装的fontforge不支持Python导致的原因。无奈之下，只有选择从源码安装。
 
@@ -55,14 +55,14 @@ description: Macports安装fontcustom制作中文图标字体
 
 1）第一个问题，有3个c文件（fontforge/macbinary.c fontforge/startui.c gutils/giomime.c）会编译失败，参考如下：
 
-{% highlight c %}
+```c
 
 giomime.c:68:10: fatal error: '/Applications/Xcode.app/Contents/Developer/Headers/FlatCarbon/Files.h' file not found
 #include </Applications/Xcode.app/Contents/Developer/Headers/FlatCarbon/Files.h>
          ^
 1 error generated.
 
-{% endhighlight %}
+```
 
 显然这是头文件的问题。因为原先代码引用的头文件从MacOSX10.8.sdk开始位置发生了变化。解决方法，要么参考[fontforge.patch][3]改相关源文件，要么直接用MacOSX10.7.sdk来编译。建议前者的说。
 
@@ -78,7 +78,7 @@ giomime.c:68:10: fatal error: '/Applications/Xcode.app/Contents/Developer/Header
 
 2)第二个问题，其编译报错如下：
 
-{% highlight c %}
+```c
 
 /System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Headers/SFNTLayoutTypes.h:1791:41: error: typedef redefinition with different types ('struct AnchorPoint' vs 'struct anchorpoint')
 typedef struct AnchorPoint              AnchorPoint;
@@ -86,7 +86,7 @@ typedef struct AnchorPoint              AnchorPoint;
 ./splinefont.h:512:3: note: previous definition is here
 } AnchorPoint;
   ^
-{% endhighlight %}
+```
 
 
 同样，原因是显而易见的，即存在结构体重复定义的问题。要么参考这位老兄的[做法](https://github.com/Homebrew/homebrew/issues/18046#issuecomment-14355327)，改动一下fontforge/startui.c这个文件即可。要么用MacOSX10.7.sdk来编译。
