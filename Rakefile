@@ -101,7 +101,7 @@ task :new do
 
 	%x[
 		osascript << EOF
-			tell application "Mou"
+			tell application "MacDown"
 				activate
 				--without as string the result is a file reference 
 				set filePath to POSIX file "#{path}" as string

@@ -167,7 +167,7 @@ make install
 这样就安装完了。
 
 
-###3.3 配置codeblocks###
+### 3.3 配置codeblocks###
 
 配置文件在~/.codeblocks/ 下，将自己原先设置好的配置替换之。其中关于程序运行和调试的终端的说明(codeblocks默认的终端是xterm)如下:
 
