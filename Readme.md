@@ -44,7 +44,7 @@
 
 6. `rake localtest`  本地jekyll调试用。
 
-7. `rake new article-title`  自动生成一个模板编辑页面，并用Mou打开
+7. `rake new article-title`  自动生成一个模板编辑页面，并用MacDown打开
 
 ***ps:***
 
