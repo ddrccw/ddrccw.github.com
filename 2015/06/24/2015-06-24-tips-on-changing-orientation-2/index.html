@@ -406,7 +406,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经过了<a href="https://itunes.apple.com/cn/app/wang-yi-yun-ke-tang-for-iphone/id880452926?mt=8" target="_blank" rel="noopener">云课堂</a>，<a href="https://itunes.apple.com/cn/app/id415424368?mt=8" target="_blank" rel="noopener">公开课</a>，<a href="https://itunes.apple.com/cn/app/id977883304" target="_blank" rel="noopener">中国大学mooc</a>三种旋转需求的考（zhe）验（mo），也踩过了好多坑。虽然之前有写过一篇<a href="http://ddrccw.github.io/2014/08/20/tips-on-changing-orientation">文章</a>已经小结过一些问题，但现在再读，感觉还探讨地不够，故又补上一篇，希望能就此彻底做个了结。当然，也希望读过此文的童鞋能少走些弯路。。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经过了<a href="https://itunes.apple.com/cn/app/wang-yi-yun-ke-tang-for-iphone/id880452926?mt=8" target="_blank" rel="noopener">云课堂</a>，<a href="https://itunes.apple.com/cn/app/id415424368?mt=8" target="_blank" rel="noopener">公开课</a>，<a href="https://itunes.apple.com/cn/app/id977883304" target="_blank" rel="noopener">中国大学mooc</a>三种旋转需求的考（zhe）验（mo），也踩过了好多坑。虽然之前有写过一篇<a href="https://ddrccw.github.io/2014/08/20/tips-on-changing-orientation">文章</a>已经小结过一些问题，但现在再读，感觉还探讨地不够，故又补上一篇，希望能就此彻底做个了结。当然，也希望读过此文的童鞋能少走些弯路。。</p>
 <p>注：此文提到的旋转包括页面和状态栏</p>
 <h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h2><h3 id="3种需求"><a href="#3种需求" class="headerlink" title="3种需求"></a>3种需求</h3><p>3个app的旋转需求实现难度可以说是从易到难。</p>
 <h4 id="云课堂"><a href="#云课堂" class="headerlink" title="云课堂"></a>云课堂</h4><p>云课堂的需求和实现最简单。相信大部分的app都是这个需求。</p>
@@ -414,7 +414,7 @@ height:50vh;
 <p>实现：因为是基于设备的系统事件通知来让页面响应旋转，所以关键是只要设置好<code>- (BOOL)shouldAutorotate</code>、<code>- (NSUInteger)supportedInterfaceOrientations</code>、<code>- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation</code>等几个函数即可。</p>
 <h4 id="公开课"><a href="#公开课" class="headerlink" title="公开课"></a>公开课</h4><p>公开课的需求和实现较云课堂来说要求要高一些。</p>
 <p>需求：旋转的控制交给用户选择，而不是受系统控制。</p>
-<p>实现：属于要无视设备的系统事件通知强制让页面旋转，具体可以参看<a href="http://ddrccw.github.io/2014/08/20/tips-on-changing-orientation">前文</a></p>
+<p>实现：属于要无视设备的系统事件通知强制让页面旋转，具体可以参看<a href="https://ddrccw.github.io/2014/08/20/tips-on-changing-orientation">前文</a></p>
 <h4 id="中国大学mooc"><a href="#中国大学mooc" class="headerlink" title="中国大学mooc"></a>中国大学mooc</h4><p>中国大学mooc的要求最高，是上述两种情况的结合体</p>
 <p>需求：</p>
 <ol>
@@ -425,7 +425,7 @@ height:50vh;
 </ol>
 <p>实现：</p>
 <p>本质上来讲，它的实现是公开课方案的加强版。同样要无视设备的系统事件，而且是基于自定义的设备事件通知页面强制旋转。</p>
-<p>强制旋转方式同公开课，但是实际开发过程中未遇到<a href="http://ddrccw.github.io/2014/08/20/tips-on-changing-orientation">前文</a>提到的需要强制把transform和frame的动画拆到两个animate block的问题，囧rz。。。关于自定义设备旋转通知，利用core motion来检测计算，具体代码是基于网上找的某段代码改的（抱歉忘了原作者是谁。。），代码查看请猛击<a href="https://github.com/ddrccw/CCRotation/blob/master/CCRotation/CCRotation/UIViewController%2BCCRotation.m" target="_blank" rel="noopener">这里</a>。</p>
+<p>强制旋转方式同公开课，但是实际开发过程中未遇到<a href="https://ddrccw.github.io/2014/08/20/tips-on-changing-orientation">前文</a>提到的需要强制把transform和frame的动画拆到两个animate block的问题，囧rz。。。关于自定义设备旋转通知，利用core motion来检测计算，具体代码是基于网上找的某段代码改的（抱歉忘了原作者是谁。。），代码查看请猛击<a href="https://github.com/ddrccw/CCRotation/blob/master/CCRotation/CCRotation/UIViewController%2BCCRotation.m" target="_blank" rel="noopener">这里</a>。</p>
 <h3 id="一个坑引发的系列惨案"><a href="#一个坑引发的系列惨案" class="headerlink" title="一个坑引发的系列惨案"></a>一个坑引发的系列惨案</h3><p>前面概述了我经历过的一些开发需求，下面重点讲一下我在开发过程中遇到的一个坑。</p>
 <h4 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h4><p>相信开发过强制旋转的童鞋，应该都遇到过这么一个令人抓狂的问题：</p>
 <p>原本在iOS8之前都是运行正常的代码，在iOS 8上运行强制旋转过后，屏幕的部分区域不能响应你的touch（没错，就是有些区域的按钮不能点了。。）。情况如图(别人画的)：</p>
@@ -621,6 +621,32 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1095,6 +1121,12 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Xcode"><span class="iconfont-archer">&#xe606;</span>Xcode</span>
     
+        <span class="sidebar-tag-name" data-tags="iPad"><span class="iconfont-archer">&#xe606;</span>iPad</span>
+    
+        <span class="sidebar-tag-name" data-tags="iPhone"><span class="iconfont-archer">&#xe606;</span>iPhone</span>
+    
+        <span class="sidebar-tag-name" data-tags="iTouch"><span class="iconfont-archer">&#xe606;</span>iTouch</span>
+    
         <span class="sidebar-tag-name" data-tags="Objective-c"><span class="iconfont-archer">&#xe606;</span>Objective-c</span>
     
         <span class="sidebar-tag-name" data-tags="Google"><span class="iconfont-archer">&#xe606;</span>Google</span>
@@ -1150,12 +1182,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="MagicalRecord"><span class="iconfont-archer">&#xe606;</span>MagicalRecord</span>
     
         <span class="sidebar-tag-name" data-tags="core data"><span class="iconfont-archer">&#xe606;</span>core data</span>
-    
-        <span class="sidebar-tag-name" data-tags="iPad"><span class="iconfont-archer">&#xe606;</span>iPad</span>
-    
-        <span class="sidebar-tag-name" data-tags="iPhone"><span class="iconfont-archer">&#xe606;</span>iPhone</span>
-    
-        <span class="sidebar-tag-name" data-tags="iTouch"><span class="iconfont-archer">&#xe606;</span>iTouch</span>
     
         <span class="sidebar-tag-name" data-tags="orientation"><span class="iconfont-archer">&#xe606;</span>orientation</span>
     
