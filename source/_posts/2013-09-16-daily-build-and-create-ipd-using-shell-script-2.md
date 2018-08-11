@@ -124,7 +124,7 @@ c. package.plist
 9）<http://chanson.livejournal.com/125568.html>
 
 
-[0]: http://ddrccw.github.io/2013/01/29/daily-build-and-create-ipa-using-shell-script/
+[0]: https://ddrccw.github.io/2013/01/29/daily-build-and-create-ipa-using-shell-script/
 
 [1]: https://gist.github.com/ddrccw/6596464 "new package shell"
 
