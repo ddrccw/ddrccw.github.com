@@ -1,6 +1,7 @@
 ---
 title: about
 date: 2018-08-11 21:30:09
+layout: about
 ---
 
 ## Profile ##
