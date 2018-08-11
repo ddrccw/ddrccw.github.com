@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html>
+    <!-- title -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="ddrccw">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="ddrccw">
+    <meta name="keywords" content="ddrccw's library | ddrccw">
+    <meta name="description" content="">
+    <meta name="Cache-Control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>ddrccw&#39;s library</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s 1;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-34556823-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+</head>
+
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <a class="home-link" href=/>ddrccw's library</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style=
+
+
+
+
+
+
+
+
+>
+    
+    <!-- 主页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/30/2017-12-30-reverse-xcode-with-lldb-and-hopper-disassembler/" >
+            
+                <span>小试Xcode逆向：app内存监控原理初探</span>
+        </a>
+        <div class="abstract-content">
+            前言最近看到公司同事的《iOS内存那些事》系列文章，其中的一篇文章讲了他在研究WebKit中内存管理的时候，发现可以用phys_footprint来衡量内存，其结果和xcode debug显示的值基本一致。文章通读下来，收获颇丰~回味之余，突然脑洞了一下，为啥不直接逆向一下Xcode，学习一下xcode debug app时它是怎么实现内存监控的？刚好最近在自学逆向知识，顺便也来练练手~
+动手实践准备一个小项目运行一下，我们可以在debug面板看到memory report信息{:height=”100%” width=”100%”}
+lldb和hopper的使用
+通过如下操作，我们可以...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "lldb">lldb</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Xcode">Xcode</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "hopper disassembler">hopper disassembler</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2015/06/24/2015-06-24-tips-on-changing-orientation-2/" >
+            
+                <span>再谈iOS旋转视图开发</span>
+        </a>
+        <div class="abstract-content">
+            前言经过了云课堂，公开课，中国大学mooc三种旋转需求的考（zhe）验（mo），也踩过了好多坑。虽然之前有写过一篇文章已经小结过一些问题，但现在再读，感觉还探讨地不够，故又补上一篇，希望能就此彻底做个了结。当然，也希望读过此文的童鞋能少走些弯路。。
+注：此文提到的旋转包括页面和状态栏
+正题3种需求3个app的旋转需求实现难度可以说是从易到难。
+云课堂云课堂的需求和实现最简单。相信大部分的app都是这个需求。
+需求：进入播放页面默认横屏，同时支持页面自动旋转。
+实现：因为是基于设备的系统事件通知来让页面响应旋转，所以关键是只要设置好- (BOOL)shouldAutorotate、- (N...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2015/06/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "orientation">orientation</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "rotation">rotation</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2014/04/13/2014-04-13-distribute-a-beta-app-to-jailbreak-device/" >
+            
+                <span>在越狱设备上如何方便地主动更新测试版本app</span>
+        </a>
+        <div class="abstract-content">
+            前言之前有段时间申请到qq测试版本，在使用过程中，发现qq测试版本的升级过程有点小意思。看过之前写的《再谈使用shell脚本build并创建ipa文件》或者网上其他类似文章关于over-the-air分发app的应该都知道，常见的app分发需要用户跳到专门的下载页面去获取新版的app，但是qq测试版本的升级体验则不同，同样是主动提示更新，但它只要在alert上点击确定就可以马上下载安装最新的测试版本，省略了跳转的步骤。个人感觉这样在体验上蛮好，所以就尝试研究了一下。
+正文为什么看下文之前，估计还是有人会问为什么会有这样奇怪的需求。这里我觉得还是从用户体验的角度上理解比较简单，个人觉得它可...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2014/04/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "jailbreak">jailbreak</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "beta-test">beta-test</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2014/01/05/2014-01-05-how-to-make-icon-fonts-from-fontcustom-installed-by-macports/" >
+            
+                <span>Macports安装fontcustom制作中文图标字体</span>
+        </a>
+        <div class="abstract-content">
+            前言最近在公司前端群里看到了关于图标字体的文章分享，不禁想到了之前star的fontdiao项目中的关于中文图标的使用。那个项目中介绍的工具通过Homebrew安装较为容易，但是MacPorts安装起来的则有些问题。因为我一直用的MacPorts，而且当时也没在网上搜到相关的解决办法，遂搁置了下来。最近刚好有空闲时间，就趁机研究了一下。
+正文安装fontcustom首先追本溯源，制作图标字体的关键是fontcustom。从它的安装说明中可以看到它的显式依赖东东有fontforge，ttfautohint。
+fontforge安装这个库是最折腾的。虽然port上可以安装上，但是实际配合fo...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2014/01/05</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "macports">macports</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "fontcustom">fontcustom</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "icon-fonts">icon-fonts</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2013/09/16/2013-09-16-daily-build-and-create-ipd-using-shell-script-2/" >
+            
+                <span>再谈使用shell脚本build并创建ipa文件</span>
+        </a>
+        <div class="abstract-content">
+            前言关于这个话题，其实在《使用shell脚本build并创建ipa文件)》一文中已经记录过一次。之所以老调重弹，也是因为在新项目的使用过程中，发现那个脚本尚有改进的余地。
+正文首先，要感谢lexrus的ios-makefile项目，里面确实有不少可以借鉴学习的地方。虽然那个项目提供的脚本包含了一些蛮有用的功能，但是结合到我现在做的项目，还是有些不能满足我的需求。本来想偷懒直接用来着，看来还是得改改orz。。
+需求基本的需求
+就是前文所实现的内容：能够从代码产出一份ipa，并且能通过相应的web页面安装。
+额外的需求
+随着app的版本升级，用户群中是可能同时存在多个版本的。因为不像企业类型...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/09/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ipa">ipa</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "daily build">daily build</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "build setting">build setting</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2013/06/29/2013-07-01-include-url-in-link/" >
+            
+                <span>记分享模块开发遇到的几个问题</span>
+        </a>
+        <div class="abstract-content">
+            正题Url Encode问题描述给第三方分享链接的url传递的参数中包含自定义的url，其中自定义的url中包含&amp;符号，导致最终在第三方web端分享界面显示时，缺少自定义url的&amp;符号后面的内容。
+分析和处理这个应该是一个典型的url encode的问题。
+说到url encode。首先参考rfc2396和rfc3986。
+12345The generic URI syntax consists of a hierarchical sequence ofcomponents referred to as the scheme, authority, path, query...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/06/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "url-encode">url-encode</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2013/04/07/2013-04-07-unit-testing-in-xcode/" >
+            
+                <span>unit testing in xcode</span>
+        </a>
+        <div class="abstract-content">
+            前言每次在xcode上建立一个new project，都会看到一个选项提示是否”Include Unit tests”。基于一些考虑，我也确实未在项目中使用过。如今，随着我开发学习的深入，一方面了解了一些TDD的概念，另一方面也确实在一些开源项目(如asi-http-request)中看到Unit test的身影。看来似乎有必要学习一下iOS开发的一些unit test知识，故也就有了此文。
+正文参考iOS开发单元测试的入门文章《unit-testing-in-xcode-4-quick-start-guide》，主要有两个比较常见的框架：OCUnit和GHUnit。另外还有一个单元测试...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/04/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Unit-testing">Unit-testing</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OCUnit">OCUnit</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "GHUnit">GHUnit</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OCMock">OCMock</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2013/03/08/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview/" >
+            
+                <span>利用UIWebView实现富文本编辑器</span>
+        </a>
+        <div class="abstract-content">
+            正文最近的一个ipad项目有需求，需要在iOS客户端上实现一个笔记功能。由于之前的一个版本对于笔记的功能要求不高，我也只是用UITextView实现了简单的录入。但是接下来的一个版本对于笔记的功能则是希望有web端富文本编辑器的所见即所得的效果。
+刚开始，我还以为只能通过Core Text实现。如果要考虑基于HTML实现录入内容的跨平台展现，可能还需要做一番HTML到NSAttributeString的对应转换，而且很多东西如复制要自己实现，比较麻烦。
+后来，上网查阅了一番，经tx的ayangxu的PPT的提点，发现可以用UIWebView实现富文本编辑，而且现今比较知名的app–eve...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/03/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "UIWebView">UIWebView</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "javascript">javascript</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2013/01/28/2013-01-28-daily-build-and-create-ipa-using-shell-script/" >
+            
+                <span>使用shell脚本build并创建ipa文件</span>
+        </a>
+        <div class="abstract-content">
+            前言由于项目引入了敏捷开发，需要每天build出一个ipa供QA测试。此前是使用Xcode先achive出一个文件，再在organizer-&gt;achives里发布ipa，一直感觉也没啥不方便的。直到某天，装了InstaSign，突然发现无法用之前的方法codesign自己的ipa（真是自作孽啊T ^ T..），网上有人说是修改了系统自带的codesign和codesign_allocate，重装xcode也没用。不过还好能build出自己项目的app，利用iTune，再创建一个ipa文件。但是这种不得已的办法，对于需要每天都打ipa包的俺来说，实在是太繁琐了。于是就有了利用shel...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ipa">ipa</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "daily build">daily build</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "build setting">build setting</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2012/12/30/2012-12-30-tip-on-date/" >
+            
+                <span>关于NSDate的tips</span>
+        </a>
+        <div class="abstract-content">
+            前言最近看了一些开源Calendar的实现，里面有不少关于NSDate与NSCalendar、 NSDateComponents、 NSDateFormatter等对象的转换，看着看着又差点把自己绕晕了。想起过去曾解决过的界面显示的时间与服务器端传过来的时间不一致的问题，看来有必要做个了断了。嘿嘿。
+正题一些基本概念
+NSDate是基于GMT（UTC），参考文档
+
+The sole primitive method of NSDate, timeIntervalSinceReferenceDate, provides the basis for all the other methods...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2012/12/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NSDate">NSDate</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NSDateFormatter">NSDateFormatter</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "UTC">UTC</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "GMT">GMT</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/tags/iOS/page/2/">2</a><a class="extend next" rel="next" href="/tags/iOS/page/2/">NEXT &#62;</a>
+    </nav>
+    
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:ddrccw@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/ddrccw" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.linkedin.com/in/%E8%AF%9A-%E9%99%88-a93375b3/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 24
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2018/03/30/2018-03-30-develop-cocoapods-plugin/" >CocoaPods plugin开发</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/30</span><a class="archive-post-title" href= "/2017/12/30/2017-12-30-reverse-xcode-with-lldb-and-hopper-disassembler/" >小试Xcode逆向：app内存监控原理初探</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/24</span><a class="archive-post-title" href= "/2015/06/24/2015-06-24-tips-on-changing-orientation-2/" >再谈iOS旋转视图开发</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2014 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span><a class="archive-post-title" href= "/2014/08/19/2014-08-19-tips-on-changing-orientation/" >播放器旋转问题小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/18</span><a class="archive-post-title" href= "/2014/05/18/2014-05-18-a-brief-analysis-and-tips-on-magialrecord/" >浅析MagicalRecord</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "/2014/04/13/2014-04-13-distribute-a-beta-app-to-jailbreak-device/" >在越狱设备上如何方便地主动更新测试版本app</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/05</span><a class="archive-post-title" href= "/2014/01/05/2014-01-05-how-to-make-icon-fonts-from-fontcustom-installed-by-macports/" >Macports安装fontcustom制作中文图标字体</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2013 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2013/09/16/2013-09-16-daily-build-and-create-ipd-using-shell-script-2/" >再谈使用shell脚本build并创建ipa文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "/2013/06/29/2013-07-01-include-url-in-link/" >记分享模块开发遇到的几个问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span><a class="archive-post-title" href= "/2013/04/07/2013-04-07-unit-testing-in-xcode/" >unit testing in xcode</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/08</span><a class="archive-post-title" href= "/2013/03/08/2013-03-08-how-to-make-a-rich-text-editor-in-uiwebview/" >利用UIWebView实现富文本编辑器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2013/01/28/2013-01-28-daily-build-and-create-ipa-using-shell-script/" >使用shell脚本build并创建ipa文件</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2012 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/30</span><a class="archive-post-title" href= "/2012/12/30/2012-12-30-tip-on-date/" >关于NSDate的tips</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2012/12/02/2012-12-02-upgrade-to-ios6/" >升级app到ios6</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2012/11/25/2012-11-25-learn-from-google-objective-c-style-guide/" >Google Objective-C Style Guide学习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2012/10/08/2012-10-08-apple-products-comparison/" >apple products comparison</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2012/09/04/2012-09-04-xcode-debug-issues/" >iOS开发过程中常见的debug技巧</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span><a class="archive-post-title" href= "/2012/08/13/2012-08-13-blogging-with-jekyll/" >在github上用jekyll搭建个人blog</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/30</span><a class="archive-post-title" href= "/2012/07/30/2012-07-30-single-app-mode/" >single app mode</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/20</span><a class="archive-post-title" href= "/2012/06/20/2012-06-20-register-setting-bundle-default-value/" >获取Settings bundle中预定义的默认值</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2012/05/25/2012-05-25-import-zbar-souce-code/" >利用源码的方式导入ZBar作为第三方library</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2012/02/22/2012-02-28-install-codeblock/" >开发利器codeblocks安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2012/02/22/2012-02-22-vmware8-install-lion/" >Vmware 8安装Lion</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2012/02/07/2012-02-07-win7x64-fedora16-double-system/" >win7x64+fedora16双系统安装</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="fedora"><span class="iconfont-archer">&#xe606;</span>fedora</span>
+    
+        <span class="sidebar-tag-name" data-tags="win7"><span class="iconfont-archer">&#xe606;</span>win7</span>
+    
+        <span class="sidebar-tag-name" data-tags="dual-system"><span class="iconfont-archer">&#xe606;</span>dual-system</span>
+    
+        <span class="sidebar-tag-name" data-tags="VMware"><span class="iconfont-archer">&#xe606;</span>VMware</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lion"><span class="iconfont-archer">&#xe606;</span>Lion</span>
+    
+        <span class="sidebar-tag-name" data-tags="c"><span class="iconfont-archer">&#xe606;</span>c</span>
+    
+        <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
+    
+        <span class="sidebar-tag-name" data-tags="codeblock"><span class="iconfont-archer">&#xe606;</span>codeblock</span>
+    
+        <span class="sidebar-tag-name" data-tags="IDE"><span class="iconfont-archer">&#xe606;</span>IDE</span>
+    
+        <span class="sidebar-tag-name" data-tags="iOS"><span class="iconfont-archer">&#xe606;</span>iOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="ZBar"><span class="iconfont-archer">&#xe606;</span>ZBar</span>
+    
+        <span class="sidebar-tag-name" data-tags="Settings.bundle"><span class="iconfont-archer">&#xe606;</span>Settings.bundle</span>
+    
+        <span class="sidebar-tag-name" data-tags="IPCU"><span class="iconfont-archer">&#xe606;</span>IPCU</span>
+    
+        <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
+    
+        <span class="sidebar-tag-name" data-tags="github-pages"><span class="iconfont-archer">&#xe606;</span>github-pages</span>
+    
+        <span class="sidebar-tag-name" data-tags="jekyll"><span class="iconfont-archer">&#xe606;</span>jekyll</span>
+    
+        <span class="sidebar-tag-name" data-tags="debug"><span class="iconfont-archer">&#xe606;</span>debug</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="lldb"><span class="iconfont-archer">&#xe606;</span>lldb</span>
+    
+        <span class="sidebar-tag-name" data-tags="Xcode"><span class="iconfont-archer">&#xe606;</span>Xcode</span>
+    
+        <span class="sidebar-tag-name" data-tags="Objective-c"><span class="iconfont-archer">&#xe606;</span>Objective-c</span>
+    
+        <span class="sidebar-tag-name" data-tags="Google"><span class="iconfont-archer">&#xe606;</span>Google</span>
+    
+        <span class="sidebar-tag-name" data-tags="code-style"><span class="iconfont-archer">&#xe606;</span>code-style</span>
+    
+        <span class="sidebar-tag-name" data-tags="ios6"><span class="iconfont-archer">&#xe606;</span>ios6</span>
+    
+        <span class="sidebar-tag-name" data-tags="upgrade"><span class="iconfont-archer">&#xe606;</span>upgrade</span>
+    
+        <span class="sidebar-tag-name" data-tags="UINavigationBar"><span class="iconfont-archer">&#xe606;</span>UINavigationBar</span>
+    
+        <span class="sidebar-tag-name" data-tags="NSDate"><span class="iconfont-archer">&#xe606;</span>NSDate</span>
+    
+        <span class="sidebar-tag-name" data-tags="NSDateFormatter"><span class="iconfont-archer">&#xe606;</span>NSDateFormatter</span>
+    
+        <span class="sidebar-tag-name" data-tags="UTC"><span class="iconfont-archer">&#xe606;</span>UTC</span>
+    
+        <span class="sidebar-tag-name" data-tags="GMT"><span class="iconfont-archer">&#xe606;</span>GMT</span>
+    
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="ipa"><span class="iconfont-archer">&#xe606;</span>ipa</span>
+    
+        <span class="sidebar-tag-name" data-tags="daily build"><span class="iconfont-archer">&#xe606;</span>daily build</span>
+    
+        <span class="sidebar-tag-name" data-tags="build setting"><span class="iconfont-archer">&#xe606;</span>build setting</span>
+    
+        <span class="sidebar-tag-name" data-tags="UIWebView"><span class="iconfont-archer">&#xe606;</span>UIWebView</span>
+    
+        <span class="sidebar-tag-name" data-tags="javascript"><span class="iconfont-archer">&#xe606;</span>javascript</span>
+    
+        <span class="sidebar-tag-name" data-tags="Unit-testing"><span class="iconfont-archer">&#xe606;</span>Unit-testing</span>
+    
+        <span class="sidebar-tag-name" data-tags="OCUnit"><span class="iconfont-archer">&#xe606;</span>OCUnit</span>
+    
+        <span class="sidebar-tag-name" data-tags="GHUnit"><span class="iconfont-archer">&#xe606;</span>GHUnit</span>
+    
+        <span class="sidebar-tag-name" data-tags="OCMock"><span class="iconfont-archer">&#xe606;</span>OCMock</span>
+    
+        <span class="sidebar-tag-name" data-tags="url-encode"><span class="iconfont-archer">&#xe606;</span>url-encode</span>
+    
+        <span class="sidebar-tag-name" data-tags="macports"><span class="iconfont-archer">&#xe606;</span>macports</span>
+    
+        <span class="sidebar-tag-name" data-tags="fontcustom"><span class="iconfont-archer">&#xe606;</span>fontcustom</span>
+    
+        <span class="sidebar-tag-name" data-tags="icon-fonts"><span class="iconfont-archer">&#xe606;</span>icon-fonts</span>
+    
+        <span class="sidebar-tag-name" data-tags="jailbreak"><span class="iconfont-archer">&#xe606;</span>jailbreak</span>
+    
+        <span class="sidebar-tag-name" data-tags="beta-test"><span class="iconfont-archer">&#xe606;</span>beta-test</span>
+    
+        <span class="sidebar-tag-name" data-tags="MagicalRecord"><span class="iconfont-archer">&#xe606;</span>MagicalRecord</span>
+    
+        <span class="sidebar-tag-name" data-tags="core data"><span class="iconfont-archer">&#xe606;</span>core data</span>
+    
+        <span class="sidebar-tag-name" data-tags="iPad"><span class="iconfont-archer">&#xe606;</span>iPad</span>
+    
+        <span class="sidebar-tag-name" data-tags="iPhone"><span class="iconfont-archer">&#xe606;</span>iPhone</span>
+    
+        <span class="sidebar-tag-name" data-tags="iTouch"><span class="iconfont-archer">&#xe606;</span>iTouch</span>
+    
+        <span class="sidebar-tag-name" data-tags="orientation"><span class="iconfont-archer">&#xe606;</span>orientation</span>
+    
+        <span class="sidebar-tag-name" data-tags="rotation"><span class="iconfont-archer">&#xe606;</span>rotation</span>
+    
+        <span class="sidebar-tag-name" data-tags="hopper disassembler"><span class="iconfont-archer">&#xe606;</span>hopper disassembler</span>
+    
+        <span class="sidebar-tag-name" data-tags="CocoaPods"><span class="iconfont-archer">&#xe606;</span>CocoaPods</span>
+    
+        <span class="sidebar-tag-name" data-tags="plugin"><span class="iconfont-archer">&#xe606;</span>plugin</span>
+    
+        <span class="sidebar-tag-name" data-tags="ruby"><span class="iconfont-archer">&#xe606;</span>ruby</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Usage"><span class="iconfont-archer">&#xe60a;</span>Usage</span>
+    
+        <span class="sidebar-category-name" data-categories="c-c"><span class="iconfont-archer">&#xe60a;</span>c-c</span>
+    
+        <span class="sidebar-category-name" data-categories="iOS-dev"><span class="iconfont-archer">&#xe60a;</span>iOS-dev</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "ddrccw"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+     
+    </body>
+</html>
+
+
