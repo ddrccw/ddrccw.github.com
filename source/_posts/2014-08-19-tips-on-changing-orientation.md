@@ -23,7 +23,7 @@ description: tips on changing orientation
 
 1. 基于设备的系统事件通知来让页面响应旋转
 	
-	关于这一点，以前写过一篇[文章](https://ddrccw.github.io/2012/12/03/upgrade-to-ios6/)其实已经提到过了。关键就是对`top-most full-screen`VC的理解，这里也就不赘述了。
+	关于这一点，以前写过一篇[文章](https://ddrccw.github.io/2012/12/02/2012-12-02-upgrade-to-ios6/)其实已经提到过了。关键就是对`top-most full-screen`VC的理解，这里也就不赘述了。
 
 2. 无视设备的系统事件通知强制让页面旋转
 

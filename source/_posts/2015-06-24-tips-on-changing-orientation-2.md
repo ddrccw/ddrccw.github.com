@@ -118,7 +118,7 @@ description: 云课堂，公开课，中国大学mooc播放学习页面三种旋
 
 [3]: https://itunes.apple.com/cn/app/id977883304
 
-[4]: https://ddrccw.github.io/2014/08/20/tips-on-changing-orientation
+[4]: https://ddrccw.github.io/2014/08/19/2014-08-19-tips-on-changing-orientation/
 
 [5]: http://stackoverflow.com/questions/28684976/ios8-how-to-show-a-different-view-controller-when-the-phone-rotates-to-landscap?lq=1
 
