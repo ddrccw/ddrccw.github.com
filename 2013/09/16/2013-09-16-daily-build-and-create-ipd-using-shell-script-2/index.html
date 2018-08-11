@@ -410,10 +410,10 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于这个话题，其实在《<a href="https://ddrccw.github.io/2013/01/29/daily-build-and-create-ipa-using-shell-script/">使用shell脚本build并创建ipa文件</a>)》一文中已经记录过一次。之所以老调重弹，也是因为在新项目的使用过程中，发现那个脚本尚有改进的余地。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于这个话题，其实在《<a href="https://ddrccw.github.io/2013/09/16/2013-09-16-daily-build-and-create-ipd-using-shell-script-2/">使用shell脚本build并创建ipa文件</a>)》一文中已经记录过一次。之所以老调重弹，也是因为在新项目的使用过程中，发现那个脚本尚有改进的余地。</p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先，要感谢lexrus的<a href="https://github.com/lexrus/ios-makefile" title="ios-makefile" target="_blank" rel="noopener">ios-makefile</a>项目，里面确实有不少可以借鉴学习的地方。虽然那个项目提供的脚本包含了一些蛮有用的功能，但是结合到我现在做的项目，还是有些不能满足我的需求。本来想偷懒直接用来着，看来还是得改改orz。。</p>
 <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p><strong>基本的需求</strong></p>
-<p>就是<a href="https://ddrccw.github.io/2013/01/29/daily-build-and-create-ipa-using-shell-script/">前文</a>所实现的内容：能够从代码产出一份ipa，并且能通过相应的web页面安装。</p>
+<p>就是<a href="https://ddrccw.github.io/2013/09/16/2013-09-16-daily-build-and-create-ipd-using-shell-script-2/">前文</a>所实现的内容：能够从代码产出一份ipa，并且能通过相应的web页面安装。</p>
 <p><strong>额外的需求</strong></p>
 <p>随着app的版本升级，用户群中是可能同时存在多个版本的。因为不像企业类型app，可以通过MDM强制客户端升级，而且强制升级的体验不是很好，所以用户客户端的版本升级是不可控的，开发以及测试人员能保障的就是让版本升级后app能够正常使用，因而，挨个的从历史版本升级到最新版本的测试是必要的。但是app一但提交到app store，历史版本就不见了，所以不能指望app store，需要在每次完成一次版本后，做一份ipa等文件的快照，方便后续的升级测试。</p>
 <p>总之一句话概括需求，就是需要做简单的版本分发管理。</p>
@@ -903,10 +903,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 24
@@ -1117,9 +1113,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="ZBar"><span class="iconfont-archer">&#xe606;</span>ZBar</span>
     
-        <span class="sidebar-tag-name" data-tags="IPCU"><span class="iconfont-archer">&#xe606;</span>IPCU</span>
-    
         <span class="sidebar-tag-name" data-tags="Settings.bundle"><span class="iconfont-archer">&#xe606;</span>Settings.bundle</span>
+    
+        <span class="sidebar-tag-name" data-tags="IPCU"><span class="iconfont-archer">&#xe606;</span>IPCU</span>
     
         <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
     
@@ -1141,12 +1137,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="iTouch"><span class="iconfont-archer">&#xe606;</span>iTouch</span>
     
-        <span class="sidebar-tag-name" data-tags="Objective-c"><span class="iconfont-archer">&#xe606;</span>Objective-c</span>
-    
-        <span class="sidebar-tag-name" data-tags="Google"><span class="iconfont-archer">&#xe606;</span>Google</span>
-    
-        <span class="sidebar-tag-name" data-tags="code-style"><span class="iconfont-archer">&#xe606;</span>code-style</span>
-    
         <span class="sidebar-tag-name" data-tags="ios6"><span class="iconfont-archer">&#xe606;</span>ios6</span>
     
         <span class="sidebar-tag-name" data-tags="upgrade"><span class="iconfont-archer">&#xe606;</span>upgrade</span>
@@ -1160,6 +1150,12 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="UTC"><span class="iconfont-archer">&#xe606;</span>UTC</span>
     
         <span class="sidebar-tag-name" data-tags="GMT"><span class="iconfont-archer">&#xe606;</span>GMT</span>
+    
+        <span class="sidebar-tag-name" data-tags="Objective-c"><span class="iconfont-archer">&#xe606;</span>Objective-c</span>
+    
+        <span class="sidebar-tag-name" data-tags="Google"><span class="iconfont-archer">&#xe606;</span>Google</span>
+    
+        <span class="sidebar-tag-name" data-tags="code-style"><span class="iconfont-archer">&#xe606;</span>code-style</span>
     
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
@@ -1201,13 +1197,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="rotation"><span class="iconfont-archer">&#xe606;</span>rotation</span>
     
-        <span class="sidebar-tag-name" data-tags="hopper disassembler"><span class="iconfont-archer">&#xe606;</span>hopper disassembler</span>
-    
         <span class="sidebar-tag-name" data-tags="CocoaPods"><span class="iconfont-archer">&#xe606;</span>CocoaPods</span>
     
         <span class="sidebar-tag-name" data-tags="plugin"><span class="iconfont-archer">&#xe606;</span>plugin</span>
     
         <span class="sidebar-tag-name" data-tags="ruby"><span class="iconfont-archer">&#xe606;</span>ruby</span>
+    
+        <span class="sidebar-tag-name" data-tags="hopper disassembler"><span class="iconfont-archer">&#xe606;</span>hopper disassembler</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
