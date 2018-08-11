@@ -205,6 +205,8 @@
 </head>
 
     
+        <body class="about-body">
+    
     
 <header class="header">
 
@@ -224,16 +226,22 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/about-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            about
             
         </h1>
         <!-- 副标题 -->
@@ -342,7 +350,8 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
+            <!-- 不可以删除，否则会调用post的layout  -->
+<main class="main about-page">
     <article class="article-entry">
         <h2 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h2><p>85后挨踢攻城狮一枚。微宅。现从事iOS开发。</p>
 <h2 id="Skills"><a href="#Skills" class="headerlink" title="Skills"></a>Skills</h2><h3 id="Experienced"><a href="#Experienced" class="headerlink" title="Experienced"></a>Experienced</h3><ul>
@@ -364,60 +373,6 @@
 <p>本站是为了记录下自己所学的足迹，加强知识的记忆理解，并且希望能够在此与大家分享 ~~~</p>
 
     </article>
-    <!-- license  -->
-    
-        <div class="license-wrapper">
-            <p>原文作者: <a href="https://ddrccw.github.io">ddrccw</a>
-            <p>原文链接: <a href="https://ddrccw.github.io/about/index.html">https://ddrccw.github.io/about/index.html</a>
-            <p>发表日期: <a href="https://ddrccw.github.io/about/index.html">August 11th 2018, 9:30:09 pm</a>
-            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
-        </div>
-    
-    <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-        </li>
-        <li class="previous">
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
-    
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        
-        var disqus_config = function () {
-        this.page.url = "https://ddrccw.github.io/about/index.html";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "about"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://ddrccw.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-    
-    <!--PC和WAP自适应版-->
-
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -501,6 +456,8 @@
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
@@ -1011,6 +968,12 @@
     
         <span class="sidebar-tag-name" data-tags="UINavigationBar"><span class="iconfont-archer">&#xe606;</span>UINavigationBar</span>
     
+        <span class="sidebar-tag-name" data-tags="Objective-c"><span class="iconfont-archer">&#xe606;</span>Objective-c</span>
+    
+        <span class="sidebar-tag-name" data-tags="Google"><span class="iconfont-archer">&#xe606;</span>Google</span>
+    
+        <span class="sidebar-tag-name" data-tags="code-style"><span class="iconfont-archer">&#xe606;</span>code-style</span>
+    
         <span class="sidebar-tag-name" data-tags="NSDate"><span class="iconfont-archer">&#xe606;</span>NSDate</span>
     
         <span class="sidebar-tag-name" data-tags="NSDateFormatter"><span class="iconfont-archer">&#xe606;</span>NSDateFormatter</span>
@@ -1018,12 +981,6 @@
         <span class="sidebar-tag-name" data-tags="UTC"><span class="iconfont-archer">&#xe606;</span>UTC</span>
     
         <span class="sidebar-tag-name" data-tags="GMT"><span class="iconfont-archer">&#xe606;</span>GMT</span>
-    
-        <span class="sidebar-tag-name" data-tags="Objective-c"><span class="iconfont-archer">&#xe606;</span>Objective-c</span>
-    
-        <span class="sidebar-tag-name" data-tags="Google"><span class="iconfont-archer">&#xe606;</span>Google</span>
-    
-        <span class="sidebar-tag-name" data-tags="code-style"><span class="iconfont-archer">&#xe606;</span>code-style</span>
     
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
@@ -1065,13 +1022,13 @@
     
         <span class="sidebar-tag-name" data-tags="rotation"><span class="iconfont-archer">&#xe606;</span>rotation</span>
     
+        <span class="sidebar-tag-name" data-tags="hopper disassembler"><span class="iconfont-archer">&#xe606;</span>hopper disassembler</span>
+    
         <span class="sidebar-tag-name" data-tags="CocoaPods"><span class="iconfont-archer">&#xe606;</span>CocoaPods</span>
     
         <span class="sidebar-tag-name" data-tags="plugin"><span class="iconfont-archer">&#xe606;</span>plugin</span>
     
         <span class="sidebar-tag-name" data-tags="ruby"><span class="iconfont-archer">&#xe606;</span>ruby</span>
-    
-        <span class="sidebar-tag-name" data-tags="hopper disassembler"><span class="iconfont-archer">&#xe606;</span>hopper disassembler</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
